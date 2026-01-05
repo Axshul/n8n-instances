@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Content Automation – Executive Overview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.0.0/webcomponents-loader.js"></script>
+<script src="https://www.unpkg.com/lit@2.0.0-rc.2/polyfill-support.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@n8n_io/n8n-demo-component/n8n-demo.bundled.js"></script>
+
+
+  <style>
+    :root {
+      --bg: #0f1117;
+      --panel: #161a22;
+      --border: #262b36;
+      --text: #e6e8ee;
+      --muted: #9aa1b2;
+      --accent: #4c8dff;
+      --success: #2ecc71;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 16px 0;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 36px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-top: 56px;
+    }
+
+    p {
+      color: var(--muted);
+      max-width: 900px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 24px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+
+    th, td {
+      border-bottom: 1px solid var(--border);
+      padding: 14px 12px;
+      text-align: left;
+    }
+
+    th {
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    td {
+      font-size: 15px;
+    }
+
+    .highlight {
+      color: var(--success);
+      font-weight: 600;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .summary-card {
+      background: #121621;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .summary-card h3 {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .summary-card div {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .footer-note {
+      margin-top: 64px;
+      font-size: 14px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+    }
+
+    n8n-demo {
+      display: block;
+      margin-top: 24px;
+      padding: 24px;
+      background: #0c0f16;
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>AI-Driven Content Automation System</h1>
+    <p>
+      This page presents a high-level executive view of the automated n8n workflow.
+      The system replaces a traditionally human-heavy content operation with AI agents,
+      long-term memory, and human approval gates.
+    </p>
+
+    <h2>Workflow Overview</h2>
+
+    
+<iframe src="https://axshul.github.io/n8n-instances/contentMachine.json" width="100%" height="500px"></iframe>
+
+
+    <h2>Cost Comparison Per Content Asset</h2>
+
+    <div class="panel">
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Human Workflow</th>
+            <th>AI Agent Workflow</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Research & SERP Analysis</td>
+            <td>2–3 hrs ($60–$90)</td>
+            <td>Automated ($5–$10)</td>
+          </tr>
+          <tr>
+            <td>SEO Content Writing</td>
+            <td>3–4 hrs ($75–$120)</td>
+            <td>Automated ($5–$10)</td>
+          </tr>
+          <tr>
+            <td>Editing & QA</td>
+            <td>1–2 hrs ($35–$70)</td>
+            <td>Automated + Review ($5–$10)</td>
+          </tr>
+          <tr>
+            <td>Image Creation</td>
+            <td>1–2 hrs ($40–$80)</td>
+            <td>Automated ($3–$8)</td>
+          </tr>
+          <tr>
+            <td>Video Creation</td>
+            <td>4–6 hrs ($200–$300)</td>
+            <td>Automated ($5–$15)</td>
+          </tr>
+          <tr>
+            <td>Upload & Metadata</td>
+            <td>0.5 hr ($10–$15)</td>
+            <td>Automated ($1–$2)</td>
+          </tr>
+          <tr>
+            <td>Total Human Time</td>
+            <td>12–17 hours</td>
+            <td>5–10 minutes</td>
+          </tr>
+          <tr>
+            <td>Total Cost Per Asset</td>
+            <td>$420–$675</td>
+            <td class="highlight">$20–$55</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Direct Financial Impact</h2>
+
+    <div class="summary">
+      <div class="summary-card">
+        <h3>Average Human Cost</h3>
+        <div>$550 / asset</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Average AI Cost</h3>
+        <div>$35 / asset</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Cost Saved Per Asset</h3>
+        <div class="highlight">$515</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Cost Reduction</h3>
+        <div class="highlight">~85–90%</div>
+      </div>
+    </div>
+
+    <h2>What This Means for the Business</h2>
+    <div class="panel">
+      <table>
+        <tbody>
+          <tr>
+            <td>Headcount Dependency</td>
+            <td>Removed</td>
+          </tr>
+          <tr>
+            <td>Scalability</td>
+            <td>Linear with infrastructure, not people</td>
+          </tr>
+          <tr>
+            <td>Knowledge Retention</td>
+            <td>Stored long-term in Supabase</td>
+          </tr>
+          <tr>
+            <td>Human Role</td>
+            <td>Approval and supervision only</td>
+          </tr>
+          <tr>
+            <td>Operational Risk</td>
+            <td>Reduced through templates and validation loops</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer-note">
+      This system converts content production from a variable labor cost into a predictable,
+      scalable infrastructure expense while keeping humans in control of final output.
+    </div>
+
+  </div>
+</body>
+</html>
