@@ -1,0 +1,4707 @@
+{
+  "name": "Content Machine – High-Level Architecture (SAFE)",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "user": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.slackTool",
+      "typeVersion": 2.4,
+      "position": [
+        19216,
+        -576
+      ],
+      "id": "310805ff-1b93-4311-a405-883237f52e71",
+      "name": "Send message and wait for response in Slack",
+      "webhookId": "339ad0db-1b9b-4b76-b03e-dbde2043fb12",
+      "credentials": {
+        "slackApi": {
+          "id": "O4KosxBJHqLsHBA4",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        19072,
+        -576
+      ],
+      "id": "c62f301f-4f18-4959-8e44-c0e99d9dcdc4",
+      "name": "SerpAPI12"
+    },
+    {
+      "parameters": {
+        "content": "# Video Uploading Agent\n\n## This Agent is the final computing Agent\n\n### - This agent Takes Researched Data, Templates, SerpAPI for backup Search.\n\n### - The agent then computes all the data and creates captions, title, and tags for the video pending for upload\n\n### - Then the agent asks the human for approval\n\n### - Then the agent Uses Youtube (or any other platform API) to enter all the required details for video uploading and then finally uploades the video.\n\n### - Once  the video uploading is done agent sends a final message to the human on slack telling the confirmed upload and sharing the video link",
+        "height": 896,
+        "width": 1296
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        18080,
+        -1280
+      ],
+      "typeVersion": 1,
+      "id": "ee0f5f7c-afe9-461d-a3c1-57f4c4bcd607",
+      "name": "Sticky Note47"
+    },
+    {
+      "parameters": {
+        "content": "# Video Creation Agent\n\n## This Agent uses Gemini-3 and creates stunning videos \n\n- Agent uses templates, supabase researched data & if needed HTTP searches\n- After computing all the data it starts writing a prompt for Gemini which later gets passed to gemini-3 for generating high quality videos\n",
+        "height": 784,
+        "width": 944
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        16032,
+        -1104
+      ],
+      "typeVersion": 1,
+      "id": "86ec93ee-1551-43c2-8f54-cd2b09ed4368",
+      "name": "Sticky Note46"
+    },
+    {
+      "parameters": {
+        "content": "# Content Creation & Uploading Agent\n\n## This agent is responsible for generating video content and let user validate the video, if everything is right the agent will move forward and will upload the video using the template and researched data using supabase\n\n### We are using Gemini-3 for video creation\n\n## - once the video is generated the video is sent to human using slack where human may decide to start uploading or video needs improvements.\n## - Once user approves for uploading the video is handed over to uploading Agent which generates the text content and captions using templates and researched data and uploads the video\n## - Once upload is done the human gets a SLACK notification of confirmation and video link\n\n",
+        "height": 1504,
+        "width": 3440,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        16000,
+        -1664
+      ],
+      "typeVersion": 1,
+      "id": "0369edf7-8e16-4e80-ab25-a0efd5e1d759",
+      "name": "Sticky Note45"
+    },
+    {
+      "parameters": {
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        19104,
+        -880
+      ],
+      "id": "fb3c2d0b-a0f9-4f80-8a5a-b43f94cbded3",
+      "name": "Send a message4",
+      "webhookId": "d1ea91ae-4686-4d90-adfa-8d9173e039be",
+      "credentials": {
+        "slackApi": {
+          "id": "O4KosxBJHqLsHBA4",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryMongoDbChat",
+      "typeVersion": 1,
+      "position": [
+        18336,
+        -576
+      ],
+      "id": "b81a1838-92c2-489d-902a-54d3e9aff084",
+      "name": "MongoDB Chat Memory1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        18768,
+        -576
+      ],
+      "id": "00701809-e186-4134-bad7-c360e34d10e7",
+      "name": "HTTP Request2"
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "operation": "upload",
+        "title": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Title', ``, 'string') }}",
+        "regionCode": "NO",
+        "binaryProperty": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Input_Binary_Field', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.youTubeTool",
+      "typeVersion": 1,
+      "position": [
+        18928,
+        -576
+      ],
+      "id": "e35bb6ee-1941-42fa-b52a-dacced633ce3",
+      "name": "Upload a video in YouTube"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        18624,
+        -576
+      ],
+      "id": "4d3240b6-751f-4806-a40a-7f4a3fad86f5",
+      "name": "Template1"
+    },
+    {
+      "parameters": {
+        "operation": "getAll"
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        18496,
+        -576
+      ],
+      "id": "c0c8b0e4-2390-498a-b0d1-65a523655f5b",
+      "name": "Get many rows in Supabase4"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-5-20250929",
+          "cachedResultName": "Claude Sonnet 4.5"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        18176,
+        -576
+      ],
+      "id": "8c60a824-c5bc-40fb-a6c7-058068f8064d",
+      "name": "Anthropic Chat Model6"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        18336,
+        -880
+      ],
+      "id": "1c384929-f508-4ba5-80cb-501aaf964470",
+      "name": "AI Agent28"
+    },
+    {
+      "parameters": {
+        "content": "# Human check for Agent generated video\n\n## Generated video will be sent to the human on SLACK, and human can decide to let the AI post the video, or let the AI know what is wrong and tell it to regenerate with remarks",
+        "height": 560,
+        "width": 672
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        17040,
+        -1120
+      ],
+      "typeVersion": 1,
+      "id": "cba46694-3b5f-445f-8309-35a9c0b41aa6",
+      "name": "Sticky Note44"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-5-20250929",
+          "cachedResultName": "Claude Sonnet 4.5"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        17360,
+        -656
+      ],
+      "id": "2d5ac9e4-b853-497e-9fd7-ca4e6aac603e",
+      "name": "Anthropic Chat Model5"
+    },
+    {
+      "parameters": {
+        "categories": {
+          "categories": [
+            {
+              "category": "Start Posting",
+              "description": "Everything is right move on"
+            },
+            {
+              "category": "regenerate",
+              "description": "step back and regenerate the video with remarks"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1.1,
+      "position": [
+        17360,
+        -864
+      ],
+      "id": "131dd1d4-2ec1-42e4-ba65-ec176b3be85a",
+      "name": "Text Classifier3"
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "user": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        17120,
+        -864
+      ],
+      "id": "81c44c5d-c43c-4805-8ff9-9938e12e2683",
+      "name": "Send a message3",
+      "webhookId": "88a4b75c-9027-4acc-bc9a-dc65919f302d",
+      "credentials": {
+        "slackApi": {
+          "id": "O4KosxBJHqLsHBA4",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        16528,
+        -608
+      ],
+      "id": "71dfc092-0ca0-445b-b668-e89c154a06d2",
+      "name": "HTTP1"
+    },
+    {
+      "parameters": {
+        "url": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('URL', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        16400,
+        -608
+      ],
+      "id": "7f294a7c-edda-44e1-bc00-1b360360ef5f",
+      "name": "Template"
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        16688,
+        -864
+      ],
+      "id": "9b88cb5d-bf1f-4f27-ba03-c8f73f618fdc",
+      "name": "Generate a video",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "iHWIXFH5grh4MvYC",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll"
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        16272,
+        -608
+      ],
+      "id": "8ed7aa3f-3fd6-4a97-b435-29b911618f09",
+      "name": "Get1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        15648,
+        -864
+      ],
+      "id": "0d889385-53f0-428e-81f3-c102ab5b3740",
+      "name": "Split Out3"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3-pro-preview",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        16128,
+        -608
+      ],
+      "id": "b22beb78-635f-4a1c-ae3b-7fd0429af68f",
+      "name": "Google Gemini Chat Model12",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "iHWIXFH5grh4MvYC",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        16128,
+        -864
+      ],
+      "id": "6d5d35a1-67db-47c4-a193-32ef1721a751",
+      "name": "AI Agent27"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        12960,
+        -1312
+      ],
+      "id": "c286b0e4-a132-4386-a4d7-ee219841543f",
+      "name": "Split Out2"
+    },
+    {
+      "parameters": {
+        "content": "# Human Check for Generated Image content\n\n## Images will be validated by human and if human wants he/she can tell the AI the remarks and it will generate the content again considering those remarks",
+        "height": 560,
+        "width": 672
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        14592,
+        -1104
+      ],
+      "typeVersion": 1,
+      "id": "add3100c-b480-4060-b708-71e6e16c2317",
+      "name": "Sticky Note43"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-5-20250929",
+          "cachedResultName": "Claude Sonnet 4.5"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        14912,
+        -640
+      ],
+      "id": "f6a4293d-7aa4-4777-9b98-93ed1b56b982",
+      "name": "Anthropic Chat Model4"
+    },
+    {
+      "parameters": {
+        "categories": {
+          "categories": [
+            {
+              "category": "Go Ahead",
+              "description": "Everything is right move on"
+            },
+            {
+              "category": "regenerate",
+              "description": "step back and regenerate the content"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1.1,
+      "position": [
+        14912,
+        -848
+      ],
+      "id": "1ac21c9e-8804-4f86-93ca-74baf2dee02e",
+      "name": "Text Classifier2"
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "user": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        14672,
+        -848
+      ],
+      "id": "20ee1f15-296d-435d-b4d7-538d81c05597",
+      "name": "Send a message2",
+      "webhookId": "88a4b75c-9027-4acc-bc9a-dc65919f302d",
+      "credentials": {
+        "slackApi": {
+          "id": "O4KosxBJHqLsHBA4",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        14288,
+        -848
+      ],
+      "id": "bbd7ff38-f965-439b-b4a9-de9907d57d4b",
+      "name": "Aggregate3"
+    },
+    {
+      "parameters": {
+        "content": "# Generating Images\n\nBy using Gemini  we are generating:\n- Image creation for posts\n- Featured image for ads\n- Infographics for total information\n\nAnd after generating the images these will go to human for approval\n\n## Image agents: generate on‑brand images and then apply standard watermark / sizing with Edit Image\n",
+        "height": 1552,
+        "width": 848
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        13168,
+        -1568
+      ],
+      "typeVersion": 1,
+      "id": "14213bdd-5013-4352-aabf-8c14fdce4415",
+      "name": "Sticky Note42"
+    },
+    {
+      "parameters": {
+        "content": "# Human Check for SEOs\n\n## Human will recieve the content generate by SEO writing agents, and human can decide to move further and can ask for edits by sending remarks with the message",
+        "height": 560,
+        "width": 672
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        12208,
+        -1376
+      ],
+      "typeVersion": 1,
+      "id": "ced04518-7a20-4183-a886-1c57ba3062d9",
+      "name": "Sticky Note41"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        13600,
+        -272
+      ],
+      "id": "4c78df18-f01e-4e9d-b720-0a9e453b6b85",
+      "name": "Template/Logo2"
+    },
+    {
+      "parameters": {
+        "operation": "getAll"
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        13440,
+        -272
+      ],
+      "id": "661449ef-0dcd-4554-af93-3a154d4f7f04",
+      "name": "Get many rows in Supabase3"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        13248,
+        -272
+      ],
+      "id": "c3ef22df-7fb3-4e31-9513-7a93e6d3a710",
+      "name": "Google Gemini Chat Model11",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "iHWIXFH5grh4MvYC",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        13328,
+        -448
+      ],
+      "id": "ff93017b-9bd0-4e29-bc90-8a8c3e550873",
+      "name": "AI Agent26"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        13808,
+        -448
+      ],
+      "id": "8240a1bb-fe52-4386-9a4d-ad3b2569b1ea",
+      "name": "Generate an image2",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "iHWIXFH5grh4MvYC",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        13632,
+        -656
+      ],
+      "id": "4dce3389-0ad2-4cf5-98d6-cb1ffe4f0f52",
+      "name": "Template/Logo1"
+    },
+    {
+      "parameters": {
+        "operation": "getAll"
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        13472,
+        -656
+      ],
+      "id": "a7637a61-0fdf-47d0-a308-dc384b6e8852",
+      "name": "Get many rows in Supabase2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        13280,
+        -656
+      ],
+      "id": "ab8432c9-d85b-49a2-b311-1edcb1dca483",
+      "name": "Google Gemini Chat Model10",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "iHWIXFH5grh4MvYC",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        13312,
+        -848
+      ],
+      "id": "78bbb1be-73aa-41bf-b2a4-796bfaf2404f",
+      "name": "AI Agent25"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        13808,
+        -848
+      ],
+      "id": "62159f54-bd46-47e8-afc1-233147d421ff",
+      "name": "Generate an image1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "iHWIXFH5grh4MvYC",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        13584,
+        -1040
+      ],
+      "id": "c8d29b68-ffc9-4e3a-ab1c-58672125c56e",
+      "name": "Template/Logo"
+    },
+    {
+      "parameters": {
+        "operation": "getAll"
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        13408,
+        -1040
+      ],
+      "id": "206a653f-6151-47e8-bc4b-65cf9e7d2d9a",
+      "name": "Get many rows in Supabase1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        13232,
+        -1040
+      ],
+      "id": "53275d68-e99d-4c42-9d04-177c5cdcd39e",
+      "name": "Google Gemini Chat Model9",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "iHWIXFH5grh4MvYC",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        13312,
+        -1216
+      ],
+      "id": "cda391f8-f7f0-4d5c-94e3-8e80d248b32f",
+      "name": "AI Agent24"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        13808,
+        -1216
+      ],
+      "id": "71e396ee-5015-457a-a363-c7480aa54d70",
+      "name": "Generate an image",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "iHWIXFH5grh4MvYC",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-5-20250929",
+          "cachedResultName": "Claude Sonnet 4.5"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        12544,
+        -960
+      ],
+      "id": "957eaee4-377a-4057-bd5c-cf441b63559d",
+      "name": "Anthropic Chat Model3"
+    },
+    {
+      "parameters": {
+        "categories": {
+          "categories": [
+            {
+              "category": "Go Ahead",
+              "description": "Everything is right move on"
+            },
+            {
+              "category": "ReWrite the SEOs",
+              "description": "step back and re write the SEOs with user remarks"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1.1,
+      "position": [
+        12544,
+        -1168
+      ],
+      "id": "59e6ed44-9ea8-4366-93b9-4da76a6cdd50",
+      "name": "Text Classifier1"
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "user": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        12304,
+        -1168
+      ],
+      "id": "3f835f7a-c311-4364-95dd-d6b73a14a8d2",
+      "name": "Send a message1",
+      "webhookId": "88a4b75c-9027-4acc-bc9a-dc65919f302d",
+      "credentials": {
+        "slackApi": {
+          "id": "O4KosxBJHqLsHBA4",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Tools \n\nSupabase for reading the data base contents before writing SEOs, HTTP for fetching templates & an AI model to compute everything for all the agents",
+        "height": 304,
+        "width": 576,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        11024,
+        -112
+      ],
+      "typeVersion": 1,
+      "id": "b7f36ee3-62e5-43c6-ad04-d8044f3e4b6c",
+      "name": "Sticky Note40"
+    },
+    {
+      "parameters": {
+        "content": "# SEO sub‑agents refine the article: headings, keyword balance, word count, internal links, schema, meta, slug",
+        "height": 2640,
+        "width": 672
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        10960,
+        -2400
+      ],
+      "typeVersion": 1,
+      "id": "cf72c96d-03c0-490f-93e4-c929b7f5a029",
+      "name": "Sticky Note39"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        11968,
+        -1168
+      ],
+      "id": "305293fe-d782-4061-919e-50cd15b3ff4a",
+      "name": "Aggregate2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        11408,
+        32
+      ],
+      "id": "09999bb2-c7a0-4c2c-ba01-f94101d7d012",
+      "name": "Templates"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        11200,
+        -320
+      ],
+      "id": "7359cec3-85fb-4b8f-953e-f19ebf1cb495",
+      "name": "AI Agent23"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        11200,
+        -560
+      ],
+      "id": "18d47be4-7c7b-4235-80be-3973a9d0a550",
+      "name": "AI Agent22"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        11200,
+        -784
+      ],
+      "id": "3a40f8ad-aa88-4db1-b8c9-793b5797ae20",
+      "name": "AI Agent21"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        11200,
+        -1024
+      ],
+      "id": "50a4cd87-654b-4e8b-8aba-2a3cacbe47f9",
+      "name": "AI Agent20"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        11200,
+        -1264
+      ],
+      "id": "ba6e5050-348f-4cef-8d82-768840016043",
+      "name": "AI Agent19"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        11200,
+        -1504
+      ],
+      "id": "d3f0b6a0-a7a9-4ec1-9bdf-465cfb51a1a6",
+      "name": "AI Agent18"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        11200,
+        -2000
+      ],
+      "id": "dc54f167-e897-4ce2-bab1-4c8973a6a0ad",
+      "name": "AI Agent17"
+    },
+    {
+      "parameters": {
+        "operation": "getAll"
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        11120,
+        32
+      ],
+      "id": "e2402588-8874-4760-ac57-f79bc56a2eeb",
+      "name": "Get many rows in Supabase"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        10608,
+        -1184
+      ],
+      "id": "7e436536-9c50-42d8-8abc-288682fae299",
+      "name": "Split Out1"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-5-20250929",
+          "cachedResultName": "Claude Sonnet 4.5"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        11264,
+        32
+      ],
+      "id": "200c1dcb-50b2-4f59-87f1-479deb18bc30",
+      "name": "Anthropic Chat Model2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        11200,
+        -1760
+      ],
+      "id": "f5faca69-6886-4c4f-afc8-eb14a7538f74",
+      "name": "AI Agent16"
+    },
+    {
+      "parameters": {
+        "content": "# Check AI Output\n\nIf AI outputs TRUE then everything should go further for human approval, if AI agent outputs False, it will go back to re write the content ",
+        "height": 336,
+        "width": 512
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        8464,
+        -1472
+      ],
+      "typeVersion": 1,
+      "id": "90f7e4db-d782-497b-833f-acc8fc5eabcd",
+      "name": "Sticky Note38"
+    },
+    {
+      "parameters": {
+        "content": "# Human Remarks\n\n## Human gets notified of a message and that contains all the info content writer wrote, and if human wants he/she can ask for rewriting content, Do Research Again & All Good Proceed further",
+        "height": 688,
+        "width": 816
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        9296,
+        -1392
+      ],
+      "typeVersion": 1,
+      "id": "11aa09ce-bc97-4188-8b6c-72f1adca88a5",
+      "name": "Sticky Note37"
+    },
+    {
+      "parameters": {
+        "categories": {
+          "categories": [
+            {
+              "category": "Right Go Ahead",
+              "description": "Everything is right move further"
+            },
+            {
+              "category": "Needs Content Improement",
+              "description": "Revoke content writers"
+            },
+            {
+              "category": "Restart",
+              "description": "Do reserch and write content "
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1.1,
+      "position": [
+        9760,
+        -1168
+      ],
+      "id": "3a4bb0dc-96c0-4974-b9e7-88c5e250c0a1",
+      "name": "Text Classifier"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-5-20250929",
+          "cachedResultName": "Claude Sonnet 4.5"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        9760,
+        -880
+      ],
+      "id": "0241533c-9cae-4922-9168-04e0f92461f5",
+      "name": "Anthropic Chat Model1"
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "user": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        9440,
+        -1152
+      ],
+      "id": "f4f5b689-da2f-4378-beed-6f4b89462307",
+      "name": "Send a message",
+      "webhookId": "4a0f1820-8734-4978-b7dc-4afbd8d6eb03",
+      "credentials": {
+        "slackApi": {
+          "id": "O4KosxBJHqLsHBA4",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Fact/Content Manager\n\n## Scans all the AI generated contents based on given templates and validates them using the research DATA fetched earilier and outputs TRUE if things are right or maybe there was some minor errors which AI can fix and proceed further. If it outputs False it means that the generated Content & Research has some defects which will make the research agent work again with some remarks that what AI found which thing was wrong",
+        "height": 1232,
+        "width": 1472,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        6688,
+        -464
+      ],
+      "typeVersion": 1,
+      "id": "ddac4774-4a37-450a-b4ed-65c9bf33b625",
+      "name": "Sticky Note36"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "a01230a8-ff2b-4f56-ac98-04769c7ce2bf",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        8656,
+        -1296
+      ],
+      "id": "2f2de22f-f527-41fd-b920-207eacc51f58",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "content": "## AI Model & MongoDB Memory\n\n**Claude** is the best reasoning model & MongoDB memory will help AI agent keep the track of all the operations",
+        "height": 304,
+        "width": 272
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        6896,
+        32
+      ],
+      "typeVersion": 1,
+      "id": "aaaae532-6f2d-41aa-8560-3da137e3a5a8",
+      "name": "Sticky Note35"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryMongoDbChat",
+      "typeVersion": 1,
+      "position": [
+        7056,
+        240
+      ],
+      "id": "e7aadcd8-360d-4189-823b-46a2121f8513",
+      "name": "MongoDB Chat Memory"
+    },
+    {
+      "parameters": {
+        "content": "## Recheck facts/fillers & False information\n\nThese allow the agent to research for the specific data AI thinks which might not be valid ",
+        "height": 320,
+        "width": 448
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        7488,
+        288
+      ],
+      "typeVersion": 1,
+      "id": "4c91e824-da6f-4dfd-af34-a1e34b718a29",
+      "name": "Sticky Note34"
+    },
+    {
+      "parameters": {
+        "content": "## Supabase Actions\nThis will allow the agent to see through the database and can make slighter changes if require ",
+        "height": 304,
+        "width": 448
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        7488,
+        -48
+      ],
+      "typeVersion": 1,
+      "id": "5741ade6-1449-4be4-9765-5d563f3607bb",
+      "name": "Sticky Note33"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        7840,
+        112
+      ],
+      "id": "a7377b47-a189-4591-ac8f-8bcbf6c1fb01",
+      "name": "Create"
+    },
+    {
+      "parameters": {
+        "operation": "update"
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        7728,
+        112
+      ],
+      "id": "e3c40bc0-70bc-450b-aead-c16f04c13880",
+      "name": "Update"
+    },
+    {
+      "parameters": {
+        "operation": "getAll"
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        7616,
+        112
+      ],
+      "id": "00de2db8-3da1-48d4-a1ed-36833c37425d",
+      "name": "Get"
+    },
+    {
+      "parameters": {
+        "operation": "delete"
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        7504,
+        112
+      ],
+      "id": "d41c7281-39e1-4e0f-9078-76c5da2fe446",
+      "name": "Delete"
+    },
+    {
+      "parameters": {
+        "url": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('URL', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        7696,
+        480
+      ],
+      "id": "5139470c-a321-468b-8b4c-9d43abe56ac5",
+      "name": "HTTP"
+    },
+    {
+      "parameters": {
+        "url": "https://api.tavily.com/search",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Name', ``, 'string') }}",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Name', ``, 'string') }}",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Name', ``, 'string') }}",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        7840,
+        480
+      ],
+      "id": "04b0dedf-fd2a-4236-9820-bf03ed63fdda",
+      "name": "Tavily"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        7504,
+        480
+      ],
+      "id": "35f0406e-1190-498c-80d0-5a7dedef64cb",
+      "name": "SerpAPI11"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        7600,
+        480
+      ],
+      "id": "eeee16cd-99e3-42b7-b8b6-2a82a08e8202",
+      "name": "SerpAPI10"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-5-20250929",
+          "cachedResultName": "Claude Sonnet 4.5"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        6928,
+        240
+      ],
+      "id": "be8c085f-f427-4a59-aace-fa97ad46dd05",
+      "name": "Anthropic Chat Model"
+    },
+    {
+      "parameters": {
+        "content": "Aggregate the writer agents output",
+        "height": 208
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        6128,
+        -288
+      ],
+      "typeVersion": 1,
+      "id": "c12d12bb-ed49-4802-a36a-85093b598d0b",
+      "name": "Sticky Note32"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        7136,
+        -224
+      ],
+      "id": "0246c26d-b5f1-46de-8fa1-570876418727",
+      "name": "AI Agent15"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        5760,
+        896
+      ],
+      "id": "770cd0da-c03d-4f19-9b75-3893b36ff18c",
+      "name": "AI Agent14"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        5760,
+        656
+      ],
+      "id": "fcaf26ed-34a0-45c0-ad3c-57756c611d56",
+      "name": "AI Agent13"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        5760,
+        400
+      ],
+      "id": "833984c2-acf1-4410-901a-a397c832077b",
+      "name": "AI Agent12"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        5760,
+        144
+      ],
+      "id": "ec3e43b2-3174-4594-b39f-5e1e36f96a23",
+      "name": "AI Agent11"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        6192,
+        -224
+      ],
+      "id": "57a1217c-3630-4b20-af82-1669f57eff43",
+      "name": "Aggregate1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        5408,
+        -96
+      ],
+      "id": "d0a25fd4-9dd1-4ea6-bb25-c7c2aa9fb7cc",
+      "name": "AI Agent10"
+    },
+    {
+      "parameters": {
+        "content": "## FAQ",
+        "height": 192,
+        "width": 368
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5312,
+        2080
+      ],
+      "typeVersion": 1,
+      "id": "3bb5ef05-8270-4e5a-8836-2a452dc26be3",
+      "name": "Sticky Note31"
+    },
+    {
+      "parameters": {
+        "content": "## Conclusion",
+        "height": 192,
+        "width": 368
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5328,
+        1824
+      ],
+      "typeVersion": 1,
+      "id": "2891e5e2-2f7a-418b-9f4d-8cdc2d9dd558",
+      "name": "Sticky Note30"
+    },
+    {
+      "parameters": {
+        "content": "## How-we-tested the casino",
+        "height": 192,
+        "width": 368
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5328,
+        1584
+      ],
+      "typeVersion": 1,
+      "id": "638f4949-046d-4c71-9457-1feca5eafe0a",
+      "name": "Sticky Note29"
+    },
+    {
+      "parameters": {
+        "content": "## Responsible Gambling ",
+        "height": 192,
+        "width": 368
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5344,
+        1360
+      ],
+      "typeVersion": 1,
+      "id": "59aa83af-62cd-49aa-9a6c-4519222604d8",
+      "name": "Sticky Note28"
+    },
+    {
+      "parameters": {
+        "content": "## Customer Service / Support",
+        "height": 192,
+        "width": 368
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5344,
+        1136
+      ],
+      "typeVersion": 1,
+      "id": "fdb72073-e3fa-4966-a3cd-0cb54a19aa62",
+      "name": "Sticky Note27"
+    },
+    {
+      "parameters": {
+        "content": "## Withdrawal process + KYC ",
+        "height": 192,
+        "width": 368
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5344,
+        912
+      ],
+      "typeVersion": 1,
+      "id": "008b8755-bf85-4c22-a3a4-8d260c984cd3",
+      "name": "Sticky Note26"
+    },
+    {
+      "parameters": {
+        "content": "## License & regulation",
+        "height": 192,
+        "width": 368
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5344,
+        368
+      ],
+      "typeVersion": 1,
+      "id": "f6add857-8caa-40ae-88a3-9c9b77f0c047",
+      "name": "Sticky Note25"
+    },
+    {
+      "parameters": {
+        "content": "## Game + Slot providers",
+        "height": 192,
+        "width": 368
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5344,
+        688
+      ],
+      "typeVersion": 1,
+      "id": "2c4799fb-5911-4ce9-bc62-1f5c81611112",
+      "name": "Sticky Note24"
+    },
+    {
+      "parameters": {
+        "content": "## History about the casino",
+        "height": 80,
+        "width": 368
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5344,
+        240
+      ],
+      "typeVersion": 1,
+      "id": "46ec1ec3-b2fa-4370-b1a5-4314d72cf216",
+      "name": "Sticky Note23"
+    },
+    {
+      "parameters": {
+        "content": "## Payment methods",
+        "height": 80,
+        "width": 368
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5344,
+        576
+      ],
+      "typeVersion": 1,
+      "id": "079465b1-f2d5-4b6b-8587-96dc8f2fdd3c",
+      "name": "Sticky Note22"
+    },
+    {
+      "parameters": {
+        "content": "## Welcome bonus test\n",
+        "height": 80,
+        "width": 368
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5344,
+        128
+      ],
+      "typeVersion": 1,
+      "id": "d13b8eb3-df3a-470f-a2b5-211f029fd034",
+      "name": "Sticky Note21"
+    },
+    {
+      "parameters": {
+        "content": "## Headline + Intro + data set",
+        "height": 192,
+        "width": 368
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5360,
+        -144
+      ],
+      "typeVersion": 1,
+      "id": "814bc9c2-cbf8-4d39-acdb-4f6832162f70",
+      "name": "Sticky Note20"
+    },
+    {
+      "parameters": {
+        "content": "## Headline + Intro + data set",
+        "height": 192,
+        "width": 368
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5360,
+        -416
+      ],
+      "typeVersion": 1,
+      "id": "aa21f153-e052-4cf1-bc3d-28f894b32559",
+      "name": "Sticky Note19"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        5328,
+        -800
+      ],
+      "id": "c9867114-756f-493c-93c0-3291f7df6ac9",
+      "name": "Write Output"
+    },
+    {
+      "parameters": {
+        "content": "## Writer Agent Tools\n- **Tavily** is given so that the AI agent is free to do just in case researh\n- **Supabase** is given to read the researched data and store the generated output\n- **HTTP** is given so that the AI agent can fetch the Template/Prompt for instructions",
+        "height": 336,
+        "width": 592
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5312,
+        -944
+      ],
+      "typeVersion": 1,
+      "id": "f869be54-3cfe-46a7-bcb8-256b9f1aaaf3",
+      "name": "Sticky Note18"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        5760,
+        -800
+      ],
+      "id": "2aa45cb3-3a01-4f8c-bd5a-8eebcf456793",
+      "name": "Template/Prompt Fetching"
+    },
+    {
+      "parameters": {
+        "url": "https://api.tavily.com/search",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Name', ``, 'string') }}",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Name', ``, 'string') }}",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Name', ``, 'string') }}",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        5472,
+        -800
+      ],
+      "id": "04f6992a-2606-4c72-ad0d-9faec6758ba6",
+      "name": "Tavily InCase Search"
+    },
+    {
+      "parameters": {
+        "operation": "get"
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        5616,
+        -800
+      ],
+      "id": "d2c1df44-5d68-4436-aedf-0204d1e475de",
+      "name": "Get a row in Supabase"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        5120,
+        -112
+      ],
+      "id": "be1a4276-8852-4b02-8eda-13749de0f3a9",
+      "name": "OpenAI Chat Model"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        5424,
+        -352
+      ],
+      "id": "c8ddbb9a-81c0-44f3-b168-c6921294b6d2",
+      "name": "AI Agent9"
+    },
+    {
+      "parameters": {
+        "content": "# These are specialist analysts: Bonus, Payments, History, Regulation, Games, Withdrawals, Support, Responsible Gambling. Each reads from the shared Supabase research store and produces structured fields for writers. These use brandName & market research to deep down inside the niche ",
+        "height": 5792,
+        "width": 1744,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2272,
+        -2928
+      ],
+      "typeVersion": 1,
+      "id": "748eeb8e-9bed-49a8-8136-d044653c08bb",
+      "name": "Sticky Note17"
+    },
+    {
+      "parameters": {
+        "content": "## Merge the output of All AI Agents\n\nby merging and creating a table we can easily process and reuse data in further operations ",
+        "height": 336,
+        "width": 400
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4528,
+        -496
+      ],
+      "typeVersion": 1,
+      "id": "adf2c2c8-d554-4cbb-8627-06090f187854",
+      "name": "Sticky Note16"
+    },
+    {
+      "parameters": {
+        "content": "## Get the supabase data and split it across different agents \n\nas it is going to decrease the chances of hallucination by using different agents for particular task",
+        "height": 384,
+        "width": 448
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1552,
+        -368
+      ],
+      "typeVersion": 1,
+      "id": "9a43805a-2bd0-43a2-9701-bdd7a5725a46",
+      "name": "Sticky Note15"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        4672,
+        -352
+      ],
+      "id": "2aaeda50-ced1-4bd8-9b82-8aa7a0266908",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        3328,
+        2432
+      ],
+      "id": "fbf9de22-4378-44e4-83b0-4fab2f98384b",
+      "name": "get Template/Scalable7"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        3104,
+        2432
+      ],
+      "id": "603841f1-495d-4726-8e14-484b5c2e12b9",
+      "name": "Create a row in Supabase7"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        3216,
+        2432
+      ],
+      "id": "3a86a7b4-7286-4ea1-80e7-883de328080b",
+      "name": "SerpAPI9"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3-pro-preview",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2960,
+        2400
+      ],
+      "id": "f9abf778-d24b-4a0b-9da8-0de7f4f950d9",
+      "name": "Google Gemini Chat Model8",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "iHWIXFH5grh4MvYC",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Responsible Gaming Agent (which tools, how)",
+        "height": 448,
+        "width": 640
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2800,
+        2128
+      ],
+      "typeVersion": 1,
+      "id": "645df1e2-a3e6-4a56-bec3-fd747b9ad321",
+      "name": "Sticky Note14"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        2960,
+        2208
+      ],
+      "id": "b6bd3343-a72e-42fe-a0a8-b8d29e1d25ca",
+      "name": "AI Agent8"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        3328,
+        1776
+      ],
+      "id": "b63428df-bf7d-49a3-a171-24b55cd50eaa",
+      "name": "get Template/Scalable6"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        3104,
+        1776
+      ],
+      "id": "6e3d1698-6651-4141-b661-5036c8e8cb46",
+      "name": "Create a row in Supabase6"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        3216,
+        1776
+      ],
+      "id": "e0cdd92c-a594-4f28-9324-a91e80a4c335",
+      "name": "SerpAPI8"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3-pro-preview",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2960,
+        1744
+      ],
+      "id": "f44df296-a2b8-4e76-9214-a640b7f98458",
+      "name": "Google Gemini Chat Model7",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "iHWIXFH5grh4MvYC",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Support Agent (FAQ, ",
+        "height": 448,
+        "width": 640
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2800,
+        1472
+      ],
+      "typeVersion": 1,
+      "id": "75ae2d85-de8a-4b34-84a1-581207bea794",
+      "name": "Sticky Note13"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        2960,
+        1552
+      ],
+      "id": "3eb875df-c5b8-4241-b3aa-7bc94e3ea0c0",
+      "name": "AI Agent7"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        3328,
+        1072
+      ],
+      "id": "c5e4e189-e17f-4d88-9d68-06964c1ffbed",
+      "name": "get Template/Scalable5"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        3104,
+        1072
+      ],
+      "id": "405b21d1-abac-4baa-b30d-e887d39827ce",
+      "name": "Create a row in Supabase5"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        3216,
+        1072
+      ],
+      "id": "a91b4898-3b7a-4d52-83a3-c5eafecc5033",
+      "name": "SerpAPI7"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3-pro-preview",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2960,
+        1040
+      ],
+      "id": "b439fbd0-196b-4664-997f-6eeb31c018ca",
+      "name": "Google Gemini Chat Model6",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "iHWIXFH5grh4MvYC",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## WD Agent",
+        "height": 448,
+        "width": 640
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2800,
+        768
+      ],
+      "typeVersion": 1,
+      "id": "d156721a-b91a-40cf-98a5-bae495de1304",
+      "name": "Sticky Note12"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        2960,
+        848
+      ],
+      "id": "3277bf89-b560-4ec2-a7ba-2130b6ba55d6",
+      "name": "AI Agent6"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        3344,
+        416
+      ],
+      "id": "72037a80-ee3d-4dad-a8d1-62a610709b28",
+      "name": "get Template/Scalable4"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        3120,
+        416
+      ],
+      "id": "eb13a305-3fe8-4112-b95e-8bb39f28fcb7",
+      "name": "Create a row in Supabase4"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        3232,
+        416
+      ],
+      "id": "e77a2f2c-2b2c-4ec4-b518-778349a08f14",
+      "name": "SerpAPI6"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3-pro-preview",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2976,
+        384
+      ],
+      "id": "d0752f46-8f6a-4490-817c-78c1495ed873",
+      "name": "Google Gemini Chat Model5",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "iHWIXFH5grh4MvYC",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Slots Agent (Excklusive slots, providers, unsual providers, jackpots, live casino games)",
+        "height": 448,
+        "width": 640
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2816,
+        112
+      ],
+      "typeVersion": 1,
+      "id": "cc5da4c7-aac3-4020-9e52-262fcaae8780",
+      "name": "Sticky Note11"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        2976,
+        192
+      ],
+      "id": "ac60f612-4435-423b-988f-6865db99a908",
+      "name": "AI Agent5"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        3328,
+        -208
+      ],
+      "id": "9eae41c9-1e55-4a49-9e3c-18fd592060c5",
+      "name": "get Template/Scalable3"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        3104,
+        -208
+      ],
+      "id": "23237022-d73c-41fd-a05b-09cc08481dae",
+      "name": "Create a row in Supabase3"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        3216,
+        -208
+      ],
+      "id": "855c1c07-9c7b-40c1-ad34-59588e831b79",
+      "name": "SerpAPI5"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3-pro-preview",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2960,
+        -240
+      ],
+      "id": "b6f20978-9c20-44ee-bc38-a7e36772b126",
+      "name": "Google Gemini Chat Model4",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "iHWIXFH5grh4MvYC",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Regulation Agent ",
+        "height": 448,
+        "width": 640
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2800,
+        -512
+      ],
+      "typeVersion": 1,
+      "id": "dc753fb2-cffc-447b-940c-4c2878f0628d",
+      "name": "Sticky Note10"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        2960,
+        -432
+      ],
+      "id": "4f5dcd37-77a4-4d5a-b380-a7afeb2d2d17",
+      "name": "AI Agent4"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        3312,
+        -912
+      ],
+      "id": "44dce0b6-122f-4833-9767-f05c1085bebf",
+      "name": "get Template/Scalable2"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        3088,
+        -912
+      ],
+      "id": "46d4aa98-3ed4-43bd-93c0-0b90d44b3801",
+      "name": "Create a row in Supabase2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        3200,
+        -912
+      ],
+      "id": "f36a9962-bc6d-48a2-9ef1-3b818ae946a3",
+      "name": "SerpAPI4"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3-pro-preview",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2944,
+        -944
+      ],
+      "id": "b69087f1-0647-45b7-9ed2-8a2d7e931feb",
+      "name": "Google Gemini Chat Model3",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "iHWIXFH5grh4MvYC",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## History Agent (Live, license, ownership)",
+        "height": 448,
+        "width": 640
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2784,
+        -1216
+      ],
+      "typeVersion": 1,
+      "id": "e3516c3b-4790-4233-8833-6aea7d1f8280",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        2944,
+        -1136
+      ],
+      "id": "3e143229-0966-49bb-b555-10f1be9f62da",
+      "name": "AI Agent3"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        3296,
+        -1584
+      ],
+      "id": "2305a006-7e8e-4ab8-91e7-3d340cf47713",
+      "name": "get Template/Scalable1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        3072,
+        -1584
+      ],
+      "id": "4ca45ec1-c5ea-4ff7-9b5a-8e9c752fd041",
+      "name": "Create a row in Supabase1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        3184,
+        -1584
+      ],
+      "id": "20ccb783-8997-40bb-8f38-5e583e72a2e3",
+      "name": "SerpAPI3"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3-pro-preview",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2928,
+        -1616
+      ],
+      "id": "f9436148-b84a-4cdf-b497-40b70563e2a1",
+      "name": "Google Gemini Chat Model2",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "iHWIXFH5grh4MvYC",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Payment Agent ",
+        "height": 448,
+        "width": 640
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2768,
+        -1888
+      ],
+      "typeVersion": 1,
+      "id": "efbfa993-e9a4-4293-b1d2-49ed92a8bf24",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        2928,
+        -1808
+      ],
+      "id": "0171f4fb-c446-43ca-846f-99967dd3ceb2",
+      "name": "AI Agent2"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        3280,
+        -2304
+      ],
+      "id": "33d10b1b-f7a9-491f-9ae2-0982c97e2fab",
+      "name": "get Template/Scalable"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        1808,
+        -160
+      ],
+      "id": "1f1928a7-02e2-442a-9900-20d90e1ff872",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -16,
+        -80
+      ],
+      "id": "f6d52e6b-69e3-4d59-a265-3329a2e4dcd8",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        3056,
+        -2304
+      ],
+      "id": "aada6eb9-a05b-4fb0-ba80-5cbc7dfbebd5",
+      "name": "Create a row in Supabase"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        3168,
+        -2304
+      ],
+      "id": "5e07dde5-d9dc-47d5-8bce-14cc1dab625b",
+      "name": "SerpAPI2"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3-pro-preview",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2912,
+        -2336
+      ],
+      "id": "df2cf277-372b-4135-8b3b-67f32622e50a",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "iHWIXFH5grh4MvYC",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Bonus Casino Agent (Welcome/Other bonuses/ T&Cs)",
+        "height": 448,
+        "width": 640
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2752,
+        -2608
+      ],
+      "typeVersion": 1,
+      "id": "d9212925-2f5f-4985-8370-ff1c27ef9040",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "operation": "getAll"
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        1616,
+        -160
+      ],
+      "id": "3187fe71-cb97-404c-9faa-3bcc1b0069cc",
+      "name": "Get many rows"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -496,
+        192
+      ],
+      "id": "e38a82aa-aaaa-4d6d-9532-7305423ab2b2",
+      "name": "Telegram Trigger",
+      "webhookId": "0190973b-94ec-4be7-a347-4423a2f5bc0e",
+      "credentials": {
+        "telegramApi": {
+          "id": "gAmvZ3GKDut3UH7T",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        2912,
+        -2528
+      ],
+      "id": "41568df3-89a8-4dfa-b4e1-baf7e8f051a4",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "content": "# Visual Representation of Data Storage\n![Data Representation](https://axshul.github.io/n8n-instances/Screenshot%202026-01-04%20213710.png)\n",
+        "height": 208,
+        "width": 1744
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -608,
+        448
+      ],
+      "typeVersion": 1,
+      "id": "d827d4e0-1389-4b74-8229-7326e822e9c0",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "## Supabase\n",
+        "height": 192,
+        "width": 150,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        80
+      ],
+      "typeVersion": 1,
+      "id": "0463b60f-2090-4b4a-a6ca-0554f61e3d14",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3-pro-preview",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -112,
+        272
+      ],
+      "id": "8179b389-ea05-44c8-b13d-0d8f92ca0971",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "iHWIXFH5grh4MvYC",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        928,
+        192
+      ],
+      "id": "5942cf1b-232f-483a-8f5d-e1f253e1b95e",
+      "name": "SerpAPI1"
+    },
+    {
+      "parameters": {
+        "content": "## PAA Using SerpAPI\nFetching PAA list using the SerpAPI with different parameters ",
+        "height": 272,
+        "width": 256,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        848,
+        48
+      ],
+      "typeVersion": 1,
+      "id": "76e007c3-b754-4dd8-9b10-2102e8c1162a",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## Research Agent 2\nUses SerpAPI To Extract Brand Specific Contents like *welcome bonus, T&Cs, license, local payments.* and with this we get the precise information about brand insights & saves rich metadata in Supabase",
+        "height": 336,
+        "width": 256,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        544,
+        32
+      ],
+      "typeVersion": 1,
+      "id": "838fe1a6-1c5e-4c6c-a7fc-0daf5ee6cf6d",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "url": "https://api.tavily.com/search",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Name', ``, 'string') }}",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Name', ``, 'string') }}",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Name', ``, 'string') }}",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        256,
+        224
+      ],
+      "id": "240d9c38-a135-417e-a9d9-a449b792bccb",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "content": "## Research Agent 1\nR-Agent 1 does the research and evaluates the **top 10** competitors from Google/Bing and scrapes their data and stores the information in a long term *Supabase** storage for reuse, once done it scrapes the insights from top 10 URLs saved in the supabase using SerpAPI and then saves it",
+        "height": 256,
+        "width": 608
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -128,
+        -320
+      ],
+      "typeVersion": 1,
+      "id": "372e3cc7-9bb6-4717-8ae0-4005fa9b1a6e",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## DeepDive\nscrape and gets a list of **URLs** which later gets iterated one-by-one using **HTTP** Request which then selects the TOP 10 webpages for deep insight research",
+        "height": 320,
+        "width": 272,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        224,
+        32
+      ],
+      "typeVersion": 1,
+      "id": "16c80ca1-6a92-4e6c-944c-0e1f84d50d15",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        384,
+        224
+      ],
+      "id": "6bb34171-5ae5-4064-baef-8c489adaf9b2",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        32,
+        128
+      ],
+      "id": "79183b61-7d11-4754-9e36-f381fe4f1b09",
+      "name": "Supabase"
+    },
+    {
+      "parameters": {
+        "content": "## Get Details/Triggers \nGet **brandName**, **market** & **niche**\n\nWhich Later Gets Processed by the AI Agent specific to a region *Betsson + Norway* which can be easily scaled up to any specific region or --all",
+        "height": 944,
+        "width": 256
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -544,
+        -592
+      ],
+      "typeVersion": 1,
+      "id": "36b4445d-3d75-44f4-8548-e2c20a136269",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        640,
+        240
+      ],
+      "id": "be2322c4-66ea-4257-8203-35e7b1a187ac",
+      "name": "SerpAPI"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        -112,
+        -176
+      ],
+      "id": "f82d9729-81ac-467d-98fd-ae9177643794",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "path": "059bfea9-7c7d-45d4-a4d2-3112b07e8bd0",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -496,
+        -368
+      ],
+      "id": "f50db2bc-5d55-4480-aa2d-a40dffe91a74",
+      "name": "Webhook",
+      "webhookId": "059bfea9-7c7d-45d4-a4d2-3112b07e8bd0"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.3,
+      "position": [
+        -496,
+        -176
+      ],
+      "id": "c749b014-7907-4017-afb3-bd48c6d25c1f",
+      "name": "On form submission",
+      "webhookId": "a1167b24-1ccd-4807-9c28-45864775d3b7"
+    },
+    {
+      "parameters": {
+        "trigger": [
+          "message"
+        ],
+        "channelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.slackTrigger",
+      "typeVersion": 1,
+      "position": [
+        -496,
+        16
+      ],
+      "id": "e91d59f5-9dd7-4f8e-a64c-087dafebfa2a",
+      "name": "Slack Trigger",
+      "webhookId": "90f33cdf-6329-4605-8dfa-e6cb335cf2ec",
+      "credentials": {
+        "slackApi": {
+          "id": "O4KosxBJHqLsHBA4",
+          "name": "Slack account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Send message and wait for response in Slack": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent28",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SerpAPI12": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent28",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent28": {
+      "main": [
+        [
+          {
+            "node": "Send a message4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MongoDB Chat Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent28",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent28",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload a video in YouTube": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent28",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Template1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent28",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many rows in Supabase4": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent28",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model6": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent28",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Classifier3": {
+      "main": [
+        [
+          {
+            "node": "AI Agent28",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent27",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model5": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Text Classifier3",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message3": {
+      "main": [
+        [
+          {
+            "node": "Text Classifier3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate a video": {
+      "main": [
+        [
+          {
+            "node": "Send a message3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out3": {
+      "main": [
+        [
+          {
+            "node": "AI Agent27",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent27",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Template": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent27",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent27": {
+      "main": [
+        [
+          {
+            "node": "Generate a video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent27",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model12": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent27",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out2": {
+      "main": [
+        [
+          {
+            "node": "AI Agent26",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent25",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent24",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Classifier2": {
+      "main": [
+        [
+          {
+            "node": "Split Out3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Split Out2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Text Classifier2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message2": {
+      "main": [
+        [
+          {
+            "node": "Text Classifier2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate3": {
+      "main": [
+        [
+          {
+            "node": "Send a message2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Template/Logo2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent26",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many rows in Supabase3": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent26",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model11": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent26",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent26": {
+      "main": [
+        [
+          {
+            "node": "Generate an image2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate an image2": {
+      "main": [
+        [
+          {
+            "node": "Aggregate3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Template/Logo1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent25",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many rows in Supabase2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent25",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model10": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent25",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent25": {
+      "main": [
+        [
+          {
+            "node": "Generate an image1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate an image1": {
+      "main": [
+        [
+          {
+            "node": "Aggregate3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Template/Logo": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent24",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many rows in Supabase1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent24",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model9": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent24",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent24": {
+      "main": [
+        [
+          {
+            "node": "Generate an image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate an image": {
+      "main": [
+        [
+          {
+            "node": "Aggregate3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Classifier1": {
+      "main": [
+        [
+          {
+            "node": "Split Out2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Split Out1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Text Classifier1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message1": {
+      "main": [
+        [
+          {
+            "node": "Text Classifier1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate2": {
+      "main": [
+        [
+          {
+            "node": "Send a message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent23": {
+      "main": [
+        [
+          {
+            "node": "Aggregate2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Templates": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent23",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent22",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent21",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent20",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent19",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent18",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent17",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent16",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent22": {
+      "main": [
+        [
+          {
+            "node": "Aggregate2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent21": {
+      "main": [
+        [
+          {
+            "node": "Aggregate2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent20": {
+      "main": [
+        [
+          {
+            "node": "Aggregate2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent19": {
+      "main": [
+        [
+          {
+            "node": "Aggregate2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent18": {
+      "main": [
+        [
+          {
+            "node": "Aggregate2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent17": {
+      "main": [
+        [
+          {
+            "node": "Aggregate2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many rows in Supabase": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent23",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent22",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent21",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent20",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent19",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent18",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent17",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent16",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent23",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent22",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent21",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent20",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent19",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent18",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent17",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent23",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent21",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent20",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent19",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent18",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent17",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent16",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent16": {
+      "main": [
+        [
+          {
+            "node": "Aggregate2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Classifier": {
+      "main": [
+        [
+          {
+            "node": "Split Out1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get many rows",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message": {
+      "main": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get many rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent15": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MongoDB Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent15",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent15",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent15",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent15",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent15",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SerpAPI11": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent15",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SerpAPI10": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent15",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent15",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tavily": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent15",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent15",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent14": {
+      "main": [
+        [
+          {
+            "node": "Aggregate1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent12": {
+      "main": [
+        [
+          {
+            "node": "Aggregate1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent11": {
+      "main": [
+        [
+          {
+            "node": "Aggregate1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent10": {
+      "main": [
+        [
+          {
+            "node": "Aggregate1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write Output": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent10",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent9",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Template/Prompt Fetching": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent10",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent9",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tavily InCase Search": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent10",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent9",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a row in Supabase": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent10",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "AI Agent9",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent10",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent9",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent9": {
+      "main": [
+        [
+          {
+            "node": "Aggregate1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "AI Agent9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent8": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get Template/Scalable7": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent8",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a row in Supabase7": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent8",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SerpAPI9": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent8",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model8": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent8",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent7": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get Template/Scalable6": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent7",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a row in Supabase6": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent7",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SerpAPI8": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent7",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model7": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent7",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent6": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get Template/Scalable5": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent6",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a row in Supabase5": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent6",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SerpAPI7": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent6",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model6": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent6",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent5": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get Template/Scalable4": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent5",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a row in Supabase4": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent5",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SerpAPI6": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent5",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model5": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent5",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent4": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get Template/Scalable3": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent4",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a row in Supabase3": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent4",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SerpAPI5": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent4",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent4",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent3": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get Template/Scalable2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent3",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a row in Supabase2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent3",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SerpAPI4": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent3",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent3",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent2": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get Template/Scalable1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a row in Supabase1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SerpAPI3": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "AI Agent8",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent7",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent6",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent5",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many rows": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get Template/Scalable": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a row in Supabase": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SerpAPI2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SerpAPI1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Get many rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SerpAPI": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "913951c0-3039-43c3-a9ec-595a87e2488b",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "c42235f7d1e0add0aff8be7a9209be7ad4d961313f2904e43cc17b4e5151b26d"
+  },
+  "id": "fnCWxgWKzcKcMNfR",
+  "tags": []
+}
