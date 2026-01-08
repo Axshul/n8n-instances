@@ -1,5 +1,4 @@
 {
-  "name": "Content Machine – High-Level Architecture (SAFE)",
   "nodes": [
     {
       "parameters": {
@@ -14,18 +13,12 @@
       "type": "n8n-nodes-base.slackTool",
       "typeVersion": 2.4,
       "position": [
-        19216,
-        -576
+        16736,
+        2240
       ],
-      "id": "310805ff-1b93-4311-a405-883237f52e71",
+      "id": "0dbc8fb8-b580-4110-bce9-84a03465552b",
       "name": "Send message and wait for response in Slack",
-      "webhookId": "339ad0db-1b9b-4b76-b03e-dbde2043fb12",
-      "credentials": {
-        "slackApi": {
-          "id": "O4KosxBJHqLsHBA4",
-          "name": "Slack account"
-        }
-      }
+      "webhookId": "339ad0db-1b9b-4b76-b03e-dbde2043fb12"
     },
     {
       "parameters": {
@@ -34,10 +27,10 @@
       "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
       "typeVersion": 1,
       "position": [
-        19072,
-        -576
+        16592,
+        2240
       ],
-      "id": "c62f301f-4f18-4959-8e44-c0e99d9dcdc4",
+      "id": "0bae2366-5b86-4f80-9959-6498ba029c11",
       "name": "SerpAPI12"
     },
     {
@@ -48,11 +41,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        18080,
-        -1280
+        15600,
+        1536
       ],
       "typeVersion": 1,
-      "id": "ee0f5f7c-afe9-461d-a3c1-57f4c4bcd607",
+      "id": "9034bf07-29d5-446c-a54b-a959a104e99b",
       "name": "Sticky Note47"
     },
     {
@@ -63,11 +56,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        16032,
-        -1104
+        13552,
+        1712
       ],
       "typeVersion": 1,
-      "id": "86ec93ee-1551-43c2-8f54-cd2b09ed4368",
+      "id": "3a80ef42-7c39-4e0d-89d8-8d1f34fcccd6",
       "name": "Sticky Note46"
     },
     {
@@ -79,11 +72,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        16000,
-        -1664
+        13520,
+        1152
       ],
       "typeVersion": 1,
-      "id": "0369edf7-8e16-4e80-ab25-a0efd5e1d759",
+      "id": "7b5cfac4-20ed-42d5-aed0-8f77f1e6ed6b",
       "name": "Sticky Note45"
     },
     {
@@ -93,28 +86,22 @@
       "type": "n8n-nodes-base.slack",
       "typeVersion": 2.4,
       "position": [
-        19104,
-        -880
+        16688,
+        1936
       ],
-      "id": "fb3c2d0b-a0f9-4f80-8a5a-b43f94cbded3",
+      "id": "eb84f2bc-5777-4c04-8257-a3e23364deeb",
       "name": "Send a message4",
-      "webhookId": "d1ea91ae-4686-4d90-adfa-8d9173e039be",
-      "credentials": {
-        "slackApi": {
-          "id": "O4KosxBJHqLsHBA4",
-          "name": "Slack account"
-        }
-      }
+      "webhookId": "d1ea91ae-4686-4d90-adfa-8d9173e039be"
     },
     {
       "parameters": {},
       "type": "@n8n/n8n-nodes-langchain.memoryMongoDbChat",
       "typeVersion": 1,
       "position": [
-        18336,
-        -576
+        15856,
+        2240
       ],
-      "id": "b81a1838-92c2-489d-902a-54d3e9aff084",
+      "id": "307b23b3-3853-4ac4-9b02-a0232f2f2031",
       "name": "MongoDB Chat Memory1"
     },
     {
@@ -124,10 +111,10 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.3,
       "position": [
-        18768,
-        -576
+        16288,
+        2240
       ],
-      "id": "00701809-e186-4134-bad7-c360e34d10e7",
+      "id": "e386025c-4f31-429c-98cd-9b270120bdbe",
       "name": "HTTP Request2"
     },
     {
@@ -142,10 +129,10 @@
       "type": "n8n-nodes-base.youTubeTool",
       "typeVersion": 1,
       "position": [
-        18928,
-        -576
+        16448,
+        2240
       ],
-      "id": "e35bb6ee-1941-42fa-b52a-dacced633ce3",
+      "id": "b191c1f8-71b0-491f-96d2-a20f3db788c8",
       "name": "Upload a video in YouTube"
     },
     {
@@ -155,10 +142,10 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.3,
       "position": [
-        18624,
-        -576
+        16144,
+        2240
       ],
-      "id": "4d3240b6-751f-4806-a40a-7f4a3fad86f5",
+      "id": "38661ae8-d534-4089-a197-18a699f76298",
       "name": "Template1"
     },
     {
@@ -168,10 +155,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        18496,
-        -576
+        16016,
+        2240
       ],
-      "id": "c0c8b0e4-2390-498a-b0d1-65a523655f5b",
+      "id": "d04b696f-31af-4e21-b51e-c6f78696a0de",
       "name": "Get many rows in Supabase4"
     },
     {
@@ -187,10 +174,10 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
       "position": [
-        18176,
-        -576
+        15696,
+        2240
       ],
-      "id": "8c60a824-c5bc-40fb-a6c7-058068f8064d",
+      "id": "1c20379a-bb83-482d-bacd-f33c5172f4f1",
       "name": "Anthropic Chat Model6"
     },
     {
@@ -200,10 +187,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        18336,
-        -880
+        15856,
+        1936
       ],
-      "id": "1c384929-f508-4ba5-80cb-501aaf964470",
+      "id": "aa13720a-996e-4580-9bf2-41040cb519cf",
       "name": "AI Agent28"
     },
     {
@@ -214,11 +201,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        17040,
-        -1120
+        14560,
+        1696
       ],
       "typeVersion": 1,
-      "id": "cba46694-3b5f-445f-8309-35a9c0b41aa6",
+      "id": "8179c879-1a65-4f85-aa63-1408a2f27fcc",
       "name": "Sticky Note44"
     },
     {
@@ -234,10 +221,10 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
       "position": [
-        17360,
-        -656
+        14880,
+        2160
       ],
-      "id": "2d5ac9e4-b853-497e-9fd7-ca4e6aac603e",
+      "id": "e035537b-1e8e-4e51-ab59-b16291c81fa6",
       "name": "Anthropic Chat Model5"
     },
     {
@@ -259,10 +246,10 @@
       "type": "@n8n/n8n-nodes-langchain.textClassifier",
       "typeVersion": 1.1,
       "position": [
-        17360,
-        -864
+        14880,
+        1952
       ],
-      "id": "131dd1d4-2ec1-42e4-ba65-ec176b3be85a",
+      "id": "63cf0285-86df-4d09-bf5c-9580a47bb1e7",
       "name": "Text Classifier3"
     },
     {
@@ -278,18 +265,12 @@
       "type": "n8n-nodes-base.slack",
       "typeVersion": 2.4,
       "position": [
-        17120,
-        -864
+        14640,
+        1952
       ],
-      "id": "81c44c5d-c43c-4805-8ff9-9938e12e2683",
+      "id": "3b0b14df-a631-43eb-8bf4-a726d00e6e16",
       "name": "Send a message3",
-      "webhookId": "88a4b75c-9027-4acc-bc9a-dc65919f302d",
-      "credentials": {
-        "slackApi": {
-          "id": "O4KosxBJHqLsHBA4",
-          "name": "Slack account"
-        }
-      }
+      "webhookId": "88a4b75c-9027-4acc-bc9a-dc65919f302d"
     },
     {
       "parameters": {
@@ -298,10 +279,10 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.3,
       "position": [
-        16528,
-        -608
+        14048,
+        2208
       ],
-      "id": "71dfc092-0ca0-445b-b668-e89c154a06d2",
+      "id": "1b1b4cf8-bb67-4f6f-8139-cd56f2038b40",
       "name": "HTTP1"
     },
     {
@@ -312,10 +293,10 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.3,
       "position": [
-        16400,
-        -608
+        13920,
+        2208
       ],
-      "id": "7f294a7c-edda-44e1-bc00-1b360360ef5f",
+      "id": "fb85eba5-3035-4278-b011-fb602ca16cfe",
       "name": "Template"
     },
     {
@@ -331,17 +312,11 @@
       "type": "@n8n/n8n-nodes-langchain.googleGemini",
       "typeVersion": 1,
       "position": [
-        16688,
-        -864
+        14208,
+        1952
       ],
-      "id": "9b88cb5d-bf1f-4f27-ba03-c8f73f618fdc",
-      "name": "Generate a video",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "iHWIXFH5grh4MvYC",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "bc37aaa6-e4e9-43c2-99a3-51f44e1311b8",
+      "name": "Generate a video"
     },
     {
       "parameters": {
@@ -350,10 +325,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        16272,
-        -608
+        13792,
+        2208
       ],
-      "id": "8ed7aa3f-3fd6-4a97-b435-29b911618f09",
+      "id": "1960bd83-7927-4201-b1bd-d2fda6fd42cf",
       "name": "Get1"
     },
     {
@@ -363,10 +338,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        15648,
-        -864
+        13168,
+        1952
       ],
-      "id": "0d889385-53f0-428e-81f3-c102ab5b3740",
+      "id": "9ef8a47c-1639-4762-9dcc-32cc8ac369f9",
       "name": "Split Out3"
     },
     {
@@ -377,17 +352,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        16128,
-        -608
+        13648,
+        2208
       ],
-      "id": "b22beb78-635f-4a1c-ae3b-7fd0429af68f",
-      "name": "Google Gemini Chat Model12",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "iHWIXFH5grh4MvYC",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "e0d6fed4-e8d0-445a-a056-d24de89573db",
+      "name": "Google Gemini Chat Model12"
     },
     {
       "parameters": {
@@ -396,10 +365,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        16128,
-        -864
+        13648,
+        1952
       ],
-      "id": "6d5d35a1-67db-47c4-a193-32ef1721a751",
+      "id": "8f49407d-35d9-4cd9-a1b6-7f40796ba37a",
       "name": "AI Agent27"
     },
     {
@@ -409,10 +378,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        12960,
-        -1312
+        10480,
+        1504
       ],
-      "id": "c286b0e4-a132-4386-a4d7-ee219841543f",
+      "id": "df4ecd38-aa7c-4f94-9303-9fab4a610564",
       "name": "Split Out2"
     },
     {
@@ -423,11 +392,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        14592,
-        -1104
+        12112,
+        1712
       ],
       "typeVersion": 1,
-      "id": "add3100c-b480-4060-b708-71e6e16c2317",
+      "id": "cfb40456-cf6b-4e40-a104-9ddd1775163e",
       "name": "Sticky Note43"
     },
     {
@@ -443,10 +412,10 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
       "position": [
-        14912,
-        -640
+        12432,
+        2176
       ],
-      "id": "f6a4293d-7aa4-4777-9b98-93ed1b56b982",
+      "id": "d9b9cf86-71be-43d5-966c-076667a940f6",
       "name": "Anthropic Chat Model4"
     },
     {
@@ -468,10 +437,10 @@
       "type": "@n8n/n8n-nodes-langchain.textClassifier",
       "typeVersion": 1.1,
       "position": [
-        14912,
-        -848
+        12432,
+        1968
       ],
-      "id": "1ac21c9e-8804-4f86-93ca-74baf2dee02e",
+      "id": "0d9f4311-7637-4433-b98a-914d85efcd10",
       "name": "Text Classifier2"
     },
     {
@@ -487,18 +456,12 @@
       "type": "n8n-nodes-base.slack",
       "typeVersion": 2.4,
       "position": [
-        14672,
-        -848
+        12192,
+        1968
       ],
-      "id": "20ee1f15-296d-435d-b4d7-538d81c05597",
+      "id": "dc35e038-8ade-46f9-9332-09b15ce27e6c",
       "name": "Send a message2",
-      "webhookId": "88a4b75c-9027-4acc-bc9a-dc65919f302d",
-      "credentials": {
-        "slackApi": {
-          "id": "O4KosxBJHqLsHBA4",
-          "name": "Slack account"
-        }
-      }
+      "webhookId": "88a4b75c-9027-4acc-bc9a-dc65919f302d"
     },
     {
       "parameters": {
@@ -512,10 +475,10 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        14288,
-        -848
+        11808,
+        1968
       ],
-      "id": "bbd7ff38-f965-439b-b4a9-de9907d57d4b",
+      "id": "a74146c7-9e76-467a-9106-ad928a5ff151",
       "name": "Aggregate3"
     },
     {
@@ -526,11 +489,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        13168,
-        -1568
+        10688,
+        1248
       ],
       "typeVersion": 1,
-      "id": "14213bdd-5013-4352-aabf-8c14fdce4415",
+      "id": "359346bd-b17f-42ce-89cf-f40b4df1a27b",
       "name": "Sticky Note42"
     },
     {
@@ -541,11 +504,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        12208,
-        -1376
+        9728,
+        1440
       ],
       "typeVersion": 1,
-      "id": "ced04518-7a20-4183-a886-1c57ba3062d9",
+      "id": "86830f5a-ab2b-434a-992c-3e6603b52426",
       "name": "Sticky Note41"
     },
     {
@@ -555,10 +518,10 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.3,
       "position": [
-        13600,
-        -272
+        11120,
+        2544
       ],
-      "id": "4c78df18-f01e-4e9d-b720-0a9e453b6b85",
+      "id": "92f05d30-b1b4-411f-a186-3b77828b1991",
       "name": "Template/Logo2"
     },
     {
@@ -568,10 +531,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        13440,
-        -272
+        10960,
+        2544
       ],
-      "id": "661449ef-0dcd-4554-af93-3a154d4f7f04",
+      "id": "2318c858-1cf9-4c75-a138-93ad4486b9fc",
       "name": "Get many rows in Supabase3"
     },
     {
@@ -581,17 +544,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        13248,
-        -272
+        10768,
+        2544
       ],
-      "id": "c3ef22df-7fb3-4e31-9513-7a93e6d3a710",
-      "name": "Google Gemini Chat Model11",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "iHWIXFH5grh4MvYC",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "357b3c74-620a-4035-9b34-6a7fffe003cf",
+      "name": "Google Gemini Chat Model11"
     },
     {
       "parameters": {
@@ -600,10 +557,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        13328,
-        -448
+        10848,
+        2368
       ],
-      "id": "ff93017b-9bd0-4e29-bc90-8a8c3e550873",
+      "id": "ff3f9b78-62d0-465e-afa8-1b4a27f036f0",
       "name": "AI Agent26"
     },
     {
@@ -619,17 +576,11 @@
       "type": "@n8n/n8n-nodes-langchain.googleGemini",
       "typeVersion": 1,
       "position": [
-        13808,
-        -448
+        11328,
+        2368
       ],
-      "id": "8240a1bb-fe52-4386-9a4d-ad3b2569b1ea",
-      "name": "Generate an image2",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "iHWIXFH5grh4MvYC",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "fef79a26-8eb5-4dbc-aaa9-766cedbb477f",
+      "name": "Generate an image2"
     },
     {
       "parameters": {
@@ -638,10 +589,10 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.3,
       "position": [
-        13632,
-        -656
+        11152,
+        2160
       ],
-      "id": "4dce3389-0ad2-4cf5-98d6-cb1ffe4f0f52",
+      "id": "44097733-74ad-4305-a7b5-5b6d312eb756",
       "name": "Template/Logo1"
     },
     {
@@ -651,10 +602,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        13472,
-        -656
+        10992,
+        2160
       ],
-      "id": "a7637a61-0fdf-47d0-a308-dc384b6e8852",
+      "id": "19d38971-b0dd-452f-a397-73cd44603afa",
       "name": "Get many rows in Supabase2"
     },
     {
@@ -664,17 +615,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        13280,
-        -656
+        10800,
+        2160
       ],
-      "id": "ab8432c9-d85b-49a2-b311-1edcb1dca483",
-      "name": "Google Gemini Chat Model10",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "iHWIXFH5grh4MvYC",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "94c3f994-d5d8-4c6d-b4d8-60c43571df20",
+      "name": "Google Gemini Chat Model10"
     },
     {
       "parameters": {
@@ -683,10 +628,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        13312,
-        -848
+        10832,
+        1968
       ],
-      "id": "78bbb1be-73aa-41bf-b2a4-796bfaf2404f",
+      "id": "c59127e8-35ad-4861-87f4-5c6ae50e883d",
       "name": "AI Agent25"
     },
     {
@@ -702,17 +647,11 @@
       "type": "@n8n/n8n-nodes-langchain.googleGemini",
       "typeVersion": 1,
       "position": [
-        13808,
-        -848
+        11328,
+        1968
       ],
-      "id": "62159f54-bd46-47e8-afc1-233147d421ff",
-      "name": "Generate an image1",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "iHWIXFH5grh4MvYC",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "980031ab-64f2-44d9-a661-05f9074e55e8",
+      "name": "Generate an image1"
     },
     {
       "parameters": {
@@ -721,10 +660,10 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.3,
       "position": [
-        13584,
-        -1040
+        11104,
+        1776
       ],
-      "id": "c8d29b68-ffc9-4e3a-ab1c-58672125c56e",
+      "id": "8854ead1-e8af-4f24-b871-703d97cfa516",
       "name": "Template/Logo"
     },
     {
@@ -734,10 +673,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        13408,
-        -1040
+        10928,
+        1776
       ],
-      "id": "206a653f-6151-47e8-bc4b-65cf9e7d2d9a",
+      "id": "635bed29-78f3-4524-86a7-763770792c9d",
       "name": "Get many rows in Supabase1"
     },
     {
@@ -747,17 +686,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        13232,
-        -1040
+        10752,
+        1776
       ],
-      "id": "53275d68-e99d-4c42-9d04-177c5cdcd39e",
-      "name": "Google Gemini Chat Model9",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "iHWIXFH5grh4MvYC",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "739032d2-7cc6-47ad-bcc8-903f492cb9be",
+      "name": "Google Gemini Chat Model9"
     },
     {
       "parameters": {
@@ -766,10 +699,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        13312,
-        -1216
+        10832,
+        1600
       ],
-      "id": "cda391f8-f7f0-4d5c-94e3-8e80d248b32f",
+      "id": "7518678c-5f7f-4087-a67a-8c87242230ee",
       "name": "AI Agent24"
     },
     {
@@ -785,17 +718,11 @@
       "type": "@n8n/n8n-nodes-langchain.googleGemini",
       "typeVersion": 1,
       "position": [
-        13808,
-        -1216
+        11328,
+        1600
       ],
-      "id": "71e396ee-5015-457a-a363-c7480aa54d70",
-      "name": "Generate an image",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "iHWIXFH5grh4MvYC",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "d1ab02b2-80e3-4643-bb53-b81151ad04bb",
+      "name": "Generate an image"
     },
     {
       "parameters": {
@@ -810,10 +737,10 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
       "position": [
-        12544,
-        -960
+        10064,
+        1856
       ],
-      "id": "957eaee4-377a-4057-bd5c-cf441b63559d",
+      "id": "24251875-bc73-4c95-bd9e-c5a7c0dbd712",
       "name": "Anthropic Chat Model3"
     },
     {
@@ -835,10 +762,10 @@
       "type": "@n8n/n8n-nodes-langchain.textClassifier",
       "typeVersion": 1.1,
       "position": [
-        12544,
-        -1168
+        10064,
+        1648
       ],
-      "id": "59e6ed44-9ea8-4366-93b9-4da76a6cdd50",
+      "id": "f495b4d2-7f88-4d5f-b79c-515295e51aec",
       "name": "Text Classifier1"
     },
     {
@@ -854,18 +781,12 @@
       "type": "n8n-nodes-base.slack",
       "typeVersion": 2.4,
       "position": [
-        12304,
-        -1168
+        9824,
+        1648
       ],
-      "id": "3f835f7a-c311-4364-95dd-d6b73a14a8d2",
+      "id": "0d3a618c-e0d5-4873-8518-e00fac06d36a",
       "name": "Send a message1",
-      "webhookId": "88a4b75c-9027-4acc-bc9a-dc65919f302d",
-      "credentials": {
-        "slackApi": {
-          "id": "O4KosxBJHqLsHBA4",
-          "name": "Slack account"
-        }
-      }
+      "webhookId": "88a4b75c-9027-4acc-bc9a-dc65919f302d"
     },
     {
       "parameters": {
@@ -876,11 +797,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        11024,
-        -112
+        8544,
+        2704
       ],
       "typeVersion": 1,
-      "id": "b7f36ee3-62e5-43c6-ad04-d8044f3e4b6c",
+      "id": "c1f796bb-d7bf-4fa7-84dd-23caec09cb59",
       "name": "Sticky Note40"
     },
     {
@@ -891,11 +812,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        10960,
-        -2400
+        8480,
+        416
       ],
       "typeVersion": 1,
-      "id": "cf72c96d-03c0-490f-93e4-c929b7f5a029",
+      "id": "92a1ef03-0742-4673-9fca-94cecc52e3af",
       "name": "Sticky Note39"
     },
     {
@@ -910,10 +831,10 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        11968,
-        -1168
+        9488,
+        1648
       ],
-      "id": "305293fe-d782-4061-919e-50cd15b3ff4a",
+      "id": "9b25f968-cfdc-455b-bd83-05723910267f",
       "name": "Aggregate2"
     },
     {
@@ -923,10 +844,10 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.3,
       "position": [
-        11408,
-        32
+        8928,
+        2848
       ],
-      "id": "09999bb2-c7a0-4c2c-ba01-f94101d7d012",
+      "id": "d0b2f445-d95c-4587-9022-22ff93d3fe01",
       "name": "Templates"
     },
     {
@@ -936,10 +857,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        11200,
-        -320
+        8720,
+        2496
       ],
-      "id": "7359cec3-85fb-4b8f-953e-f19ebf1cb495",
+      "id": "3f657a85-3099-4def-a274-d46ecccd3cd8",
       "name": "AI Agent23"
     },
     {
@@ -949,10 +870,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        11200,
-        -560
+        8720,
+        2256
       ],
-      "id": "18d47be4-7c7b-4235-80be-3973a9d0a550",
+      "id": "0dc9f115-63dc-471d-b1c9-ba86729717c4",
       "name": "AI Agent22"
     },
     {
@@ -962,10 +883,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        11200,
-        -784
+        8720,
+        2032
       ],
-      "id": "3a40f8ad-aa88-4db1-b8c9-793b5797ae20",
+      "id": "7a944e38-bee4-4c8e-9cc8-aa7808359c1a",
       "name": "AI Agent21"
     },
     {
@@ -975,10 +896,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        11200,
-        -1024
+        8720,
+        1792
       ],
-      "id": "50a4cd87-654b-4e8b-8aba-2a3cacbe47f9",
+      "id": "201d6545-73d5-4c99-8389-e86f3d76cfe6",
       "name": "AI Agent20"
     },
     {
@@ -988,10 +909,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        11200,
-        -1264
+        8720,
+        1552
       ],
-      "id": "ba6e5050-348f-4cef-8d82-768840016043",
+      "id": "6b94f42e-1dcb-4742-8d48-4da3143f4664",
       "name": "AI Agent19"
     },
     {
@@ -1001,10 +922,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        11200,
-        -1504
+        8720,
+        1312
       ],
-      "id": "d3f0b6a0-a7a9-4ec1-9bdf-465cfb51a1a6",
+      "id": "dc2e6ed2-88e4-4fc5-908e-62947223c134",
       "name": "AI Agent18"
     },
     {
@@ -1014,10 +935,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        11200,
-        -2000
+        8720,
+        816
       ],
-      "id": "dc54f167-e897-4ce2-bab1-4c8973a6a0ad",
+      "id": "afaed62b-d2a1-46d9-8936-874d9b7d387c",
       "name": "AI Agent17"
     },
     {
@@ -1027,10 +948,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        11120,
-        32
+        8640,
+        2848
       ],
-      "id": "e2402588-8874-4760-ac57-f79bc56a2eeb",
+      "id": "c96cd7c7-e062-4470-aed4-0ea8ec86a2e7",
       "name": "Get many rows in Supabase"
     },
     {
@@ -1040,10 +961,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        10608,
-        -1184
+        8128,
+        1632
       ],
-      "id": "7e436536-9c50-42d8-8abc-288682fae299",
+      "id": "ca4a2d8a-4dc4-4be5-8c30-9f4e8ad0bf49",
       "name": "Split Out1"
     },
     {
@@ -1059,10 +980,10 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
       "position": [
-        11264,
-        32
+        8784,
+        2848
       ],
-      "id": "200c1dcb-50b2-4f59-87f1-479deb18bc30",
+      "id": "ca51427a-db3d-44bf-b393-02cc341c22b9",
       "name": "Anthropic Chat Model2"
     },
     {
@@ -1072,10 +993,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        11200,
-        -1760
+        8720,
+        1056
       ],
-      "id": "f5faca69-6886-4c4f-afc8-eb14a7538f74",
+      "id": "015d201c-d7f3-4a9e-aa9d-33deb6dc2ad9",
       "name": "AI Agent16"
     },
     {
@@ -1086,11 +1007,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        8464,
-        -1472
+        5984,
+        1344
       ],
       "typeVersion": 1,
-      "id": "90f7e4db-d782-497b-833f-acc8fc5eabcd",
+      "id": "9d335fd1-c41d-40ec-90f2-beaa8874e0de",
       "name": "Sticky Note38"
     },
     {
@@ -1101,11 +1022,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        9296,
-        -1392
+        6816,
+        1424
       ],
       "typeVersion": 1,
-      "id": "11aa09ce-bc97-4188-8b6c-72f1adca88a5",
+      "id": "95b2719a-f848-43d3-9fef-1d806dfe2bec",
       "name": "Sticky Note37"
     },
     {
@@ -1131,10 +1052,10 @@
       "type": "@n8n/n8n-nodes-langchain.textClassifier",
       "typeVersion": 1.1,
       "position": [
-        9760,
-        -1168
+        7280,
+        1648
       ],
-      "id": "3a4bb0dc-96c0-4974-b9e7-88c5e250c0a1",
+      "id": "d05e86da-8123-40f0-a15c-a00dc2a02a44",
       "name": "Text Classifier"
     },
     {
@@ -1150,10 +1071,10 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
       "position": [
-        9760,
-        -880
+        7280,
+        1936
       ],
-      "id": "0241533c-9cae-4922-9168-04e0f92461f5",
+      "id": "fbdc6a48-506c-4c5a-b8f6-4a51b200a090",
       "name": "Anthropic Chat Model1"
     },
     {
@@ -1169,18 +1090,12 @@
       "type": "n8n-nodes-base.slack",
       "typeVersion": 2.4,
       "position": [
-        9440,
-        -1152
+        6960,
+        1664
       ],
-      "id": "f4f5b689-da2f-4378-beed-6f4b89462307",
+      "id": "f6d08be0-a88e-4173-8806-d6f17e6dcd63",
       "name": "Send a message",
-      "webhookId": "4a0f1820-8734-4978-b7dc-4afbd8d6eb03",
-      "credentials": {
-        "slackApi": {
-          "id": "O4KosxBJHqLsHBA4",
-          "name": "Slack account"
-        }
-      }
+      "webhookId": "4a0f1820-8734-4978-b7dc-4afbd8d6eb03"
     },
     {
       "parameters": {
@@ -1191,11 +1106,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        6688,
-        -464
+        4208,
+        2352
       ],
       "typeVersion": 1,
-      "id": "ddac4774-4a37-450a-b4ed-65c9bf33b625",
+      "id": "bbf1c031-1d00-4a04-82a6-d2a74575ea3a",
       "name": "Sticky Note36"
     },
     {
@@ -1226,10 +1141,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3,
       "position": [
-        8656,
-        -1296
+        6176,
+        1520
       ],
-      "id": "2f2de22f-f527-41fd-b920-207eacc51f58",
+      "id": "4328ccb0-adca-46af-9b41-dade4eac1b0a",
       "name": "If"
     },
     {
@@ -1240,11 +1155,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        6896,
-        32
+        4416,
+        2848
       ],
       "typeVersion": 1,
-      "id": "aaaae532-6f2d-41aa-8560-3da137e3a5a8",
+      "id": "52d97048-5be5-4663-9064-6f16ee539e31",
       "name": "Sticky Note35"
     },
     {
@@ -1252,10 +1167,10 @@
       "type": "@n8n/n8n-nodes-langchain.memoryMongoDbChat",
       "typeVersion": 1,
       "position": [
-        7056,
-        240
+        4576,
+        3056
       ],
-      "id": "e7aadcd8-360d-4189-823b-46a2121f8513",
+      "id": "ffe3a14e-ddbf-429d-b584-e6016a3b9b1c",
       "name": "MongoDB Chat Memory"
     },
     {
@@ -1266,11 +1181,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        7488,
-        288
+        5008,
+        3104
       ],
       "typeVersion": 1,
-      "id": "4c91e824-da6f-4dfd-af34-a1e34b718a29",
+      "id": "ad0b4f8e-7d86-4d70-9536-aa6b989e5837",
       "name": "Sticky Note34"
     },
     {
@@ -1281,11 +1196,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        7488,
-        -48
+        5008,
+        2768
       ],
       "typeVersion": 1,
-      "id": "5741ade6-1449-4be4-9765-5d563f3607bb",
+      "id": "d4534bab-dafe-4d0e-a9d3-1b6739f82e10",
       "name": "Sticky Note33"
     },
     {
@@ -1293,10 +1208,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        7840,
-        112
+        5360,
+        2928
       ],
-      "id": "a7377b47-a189-4591-ac8f-8bcbf6c1fb01",
+      "id": "a90b6518-1cf5-4c82-a296-67b9c514e21b",
       "name": "Create"
     },
     {
@@ -1306,10 +1221,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        7728,
-        112
+        5248,
+        2928
       ],
-      "id": "e3c40bc0-70bc-450b-aead-c16f04c13880",
+      "id": "161b30ae-bc21-4318-9aec-397f74503add",
       "name": "Update"
     },
     {
@@ -1319,10 +1234,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        7616,
-        112
+        5136,
+        2928
       ],
-      "id": "00de2db8-3da1-48d4-a1ed-36833c37425d",
+      "id": "d1f67bda-9392-4be6-b5a7-23b2c1a13e6f",
       "name": "Get"
     },
     {
@@ -1332,10 +1247,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        7504,
-        112
+        5024,
+        2928
       ],
-      "id": "d41c7281-39e1-4e0f-9078-76c5da2fe446",
+      "id": "f3d81aa0-022d-4034-8e91-94eeea2ef49e",
       "name": "Delete"
     },
     {
@@ -1346,10 +1261,10 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.3,
       "position": [
-        7696,
-        480
+        5216,
+        3296
       ],
-      "id": "5139470c-a321-468b-8b4c-9d43abe56ac5",
+      "id": "662356d9-57c8-46f7-8877-4f5344242f2f",
       "name": "HTTP"
     },
     {
@@ -1387,10 +1302,10 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.3,
       "position": [
-        7840,
-        480
+        5360,
+        3296
       ],
-      "id": "04b0dedf-fd2a-4236-9820-bf03ed63fdda",
+      "id": "4a4e0e6d-8569-4e55-b418-ec13ddd348ae",
       "name": "Tavily"
     },
     {
@@ -1400,10 +1315,10 @@
       "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
       "typeVersion": 1,
       "position": [
-        7504,
-        480
+        5024,
+        3296
       ],
-      "id": "35f0406e-1190-498c-80d0-5a7dedef64cb",
+      "id": "26e7f09f-9207-4f7b-bb51-72f2168498e6",
       "name": "SerpAPI11"
     },
     {
@@ -1413,10 +1328,10 @@
       "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
       "typeVersion": 1,
       "position": [
-        7600,
-        480
+        5120,
+        3296
       ],
-      "id": "eeee16cd-99e3-42b7-b8b6-2a82a08e8202",
+      "id": "ae881738-8e75-46d7-93d3-62f760f27c63",
       "name": "SerpAPI10"
     },
     {
@@ -1432,10 +1347,10 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "typeVersion": 1.3,
       "position": [
-        6928,
-        240
+        4448,
+        3056
       ],
-      "id": "be8c085f-f427-4a59-aace-fa97ad46dd05",
+      "id": "52364240-4205-463a-b1d2-caaaa73a9269",
       "name": "Anthropic Chat Model"
     },
     {
@@ -1445,11 +1360,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        6128,
-        -288
+        3648,
+        2528
       ],
       "typeVersion": 1,
-      "id": "c12d12bb-ed49-4802-a36a-85093b598d0b",
+      "id": "e570e5a2-4309-4467-844d-92fa56542aa5",
       "name": "Sticky Note32"
     },
     {
@@ -1459,10 +1374,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        7136,
-        -224
+        4656,
+        2592
       ],
-      "id": "0246c26d-b5f1-46de-8fa1-570876418727",
+      "id": "66825863-72a8-41b2-b7e1-f52f833b1944",
       "name": "AI Agent15"
     },
     {
@@ -1472,10 +1387,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        5760,
-        896
+        3280,
+        3712
       ],
-      "id": "770cd0da-c03d-4f19-9b75-3893b36ff18c",
+      "id": "54b56fcd-1397-4ca2-86e0-c679fe37f66f",
       "name": "AI Agent14"
     },
     {
@@ -1485,10 +1400,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        5760,
-        656
+        3280,
+        3472
       ],
-      "id": "fcaf26ed-34a0-45c0-ad3c-57756c611d56",
+      "id": "dd4bd56c-9618-4db1-8530-fad7c98e95f5",
       "name": "AI Agent13"
     },
     {
@@ -1498,10 +1413,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        5760,
-        400
+        3280,
+        3216
       ],
-      "id": "833984c2-acf1-4410-901a-a397c832077b",
+      "id": "af9a0972-635d-4167-a845-0f6bfa1bfa32",
       "name": "AI Agent12"
     },
     {
@@ -1511,10 +1426,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        5760,
-        144
+        3280,
+        2960
       ],
-      "id": "ec3e43b2-3174-4594-b39f-5e1e36f96a23",
+      "id": "77d6b96b-1e6f-4b7f-808e-d72d33d41ad8",
       "name": "AI Agent11"
     },
     {
@@ -1529,10 +1444,10 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        6192,
-        -224
+        3712,
+        2592
       ],
-      "id": "57a1217c-3630-4b20-af82-1669f57eff43",
+      "id": "5bf4af05-6f8b-4c7a-a6e6-fecd2dbd89b7",
       "name": "Aggregate1"
     },
     {
@@ -1542,10 +1457,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        5408,
-        -96
+        2928,
+        2720
       ],
-      "id": "d0a25fd4-9dd1-4ea6-bb25-c7c2aa9fb7cc",
+      "id": "79747af7-2cb1-4474-b0c1-8a69cb7b4b26",
       "name": "AI Agent10"
     },
     {
@@ -1556,11 +1471,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        5312,
-        2080
+        2832,
+        4896
       ],
       "typeVersion": 1,
-      "id": "3bb5ef05-8270-4e5a-8836-2a452dc26be3",
+      "id": "7084f9ea-561a-490b-8b31-9f5d4eb1ca9c",
       "name": "Sticky Note31"
     },
     {
@@ -1571,11 +1486,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        5328,
-        1824
+        2848,
+        4640
       ],
       "typeVersion": 1,
-      "id": "2891e5e2-2f7a-418b-9f4d-8cdc2d9dd558",
+      "id": "808d11a5-f79f-47f1-af98-8e650d253706",
       "name": "Sticky Note30"
     },
     {
@@ -1586,11 +1501,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        5328,
-        1584
+        2848,
+        4400
       ],
       "typeVersion": 1,
-      "id": "638f4949-046d-4c71-9457-1feca5eafe0a",
+      "id": "b44b63ae-2eae-412b-885a-04de9e1f5bb0",
       "name": "Sticky Note29"
     },
     {
@@ -1601,11 +1516,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        5344,
-        1360
+        2864,
+        4176
       ],
       "typeVersion": 1,
-      "id": "59aa83af-62cd-49aa-9a6c-4519222604d8",
+      "id": "02d6a93f-3173-4133-92da-6dc4ae424f21",
       "name": "Sticky Note28"
     },
     {
@@ -1616,11 +1531,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        5344,
-        1136
+        2864,
+        3952
       ],
       "typeVersion": 1,
-      "id": "fdb72073-e3fa-4966-a3cd-0cb54a19aa62",
+      "id": "a1703de2-803a-429b-ba22-ae17a8d53bd4",
       "name": "Sticky Note27"
     },
     {
@@ -1631,11 +1546,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        5344,
-        912
+        2864,
+        3728
       ],
       "typeVersion": 1,
-      "id": "008b8755-bf85-4c22-a3a4-8d260c984cd3",
+      "id": "937a3a86-b66c-4d6d-a05d-eb2ba74684e5",
       "name": "Sticky Note26"
     },
     {
@@ -1646,11 +1561,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        5344,
-        368
+        2864,
+        3184
       ],
       "typeVersion": 1,
-      "id": "f6add857-8caa-40ae-88a3-9c9b77f0c047",
+      "id": "bedaba0e-17bf-430e-9d26-e676079aee55",
       "name": "Sticky Note25"
     },
     {
@@ -1661,11 +1576,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        5344,
-        688
+        2864,
+        3504
       ],
       "typeVersion": 1,
-      "id": "2c4799fb-5911-4ce9-bc62-1f5c81611112",
+      "id": "d730e486-94fc-411b-a2e2-aa9accc128d7",
       "name": "Sticky Note24"
     },
     {
@@ -1676,11 +1591,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        5344,
-        240
+        2864,
+        3056
       ],
       "typeVersion": 1,
-      "id": "46ec1ec3-b2fa-4370-b1a5-4314d72cf216",
+      "id": "1bdd6f5d-fa2c-4eb0-b2f2-3ac681e8b210",
       "name": "Sticky Note23"
     },
     {
@@ -1691,11 +1606,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        5344,
-        576
+        2864,
+        3392
       ],
       "typeVersion": 1,
-      "id": "079465b1-f2d5-4b6b-8587-96dc8f2fdd3c",
+      "id": "a0dab333-40ac-4f5a-ab47-3f4b9595df20",
       "name": "Sticky Note22"
     },
     {
@@ -1706,11 +1621,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        5344,
-        128
+        2864,
+        2944
       ],
       "typeVersion": 1,
-      "id": "d13b8eb3-df3a-470f-a2b5-211f029fd034",
+      "id": "bef31e60-d398-4f2d-9f58-efedd65043ad",
       "name": "Sticky Note21"
     },
     {
@@ -1721,11 +1636,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        5360,
-        -144
+        2880,
+        2672
       ],
       "typeVersion": 1,
-      "id": "814bc9c2-cbf8-4d39-acdb-4f6832162f70",
+      "id": "f8023211-61d9-4411-8235-6739317cfda8",
       "name": "Sticky Note20"
     },
     {
@@ -1736,11 +1651,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        5360,
-        -416
+        2880,
+        2400
       ],
       "typeVersion": 1,
-      "id": "aa21f153-e052-4cf1-bc3d-28f894b32559",
+      "id": "a208d6e6-09c9-44a3-b76b-29d908f2ca79",
       "name": "Sticky Note19"
     },
     {
@@ -1748,10 +1663,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        5328,
-        -800
+        2848,
+        2016
       ],
-      "id": "c9867114-756f-493c-93c0-3291f7df6ac9",
+      "id": "b444498c-72e3-46a2-9afc-db3e7c7ba3f6",
       "name": "Write Output"
     },
     {
@@ -1762,11 +1677,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        5312,
-        -944
+        2832,
+        1872
       ],
       "typeVersion": 1,
-      "id": "f869be54-3cfe-46a7-bcb8-256b9f1aaaf3",
+      "id": "5b64351f-09d4-4d31-92a5-7fb1fdddc0d7",
       "name": "Sticky Note18"
     },
     {
@@ -1776,10 +1691,10 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.3,
       "position": [
-        5760,
-        -800
+        3280,
+        2016
       ],
-      "id": "2aa45cb3-3a01-4f8c-bd5a-8eebcf456793",
+      "id": "ba544919-a944-4b2a-a757-1c4e2abf711d",
       "name": "Template/Prompt Fetching"
     },
     {
@@ -1817,10 +1732,10 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.3,
       "position": [
-        5472,
-        -800
+        2992,
+        2016
       ],
-      "id": "04f6992a-2606-4c72-ad0d-9faec6758ba6",
+      "id": "2742ed7b-28cd-448a-93b2-404e734efb47",
       "name": "Tavily InCase Search"
     },
     {
@@ -1830,10 +1745,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        5616,
-        -800
+        3136,
+        2016
       ],
-      "id": "d2c1df44-5d68-4436-aedf-0204d1e475de",
+      "id": "8d6a5625-9b6e-4dbf-b975-66c482249789",
       "name": "Get a row in Supabase"
     },
     {
@@ -1849,10 +1764,10 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        5120,
-        -112
+        2640,
+        2704
       ],
-      "id": "be1a4276-8852-4b02-8eda-13749de0f3a9",
+      "id": "760f14e1-6ced-4e1d-a480-535668c6c1db",
       "name": "OpenAI Chat Model"
     },
     {
@@ -1862,10 +1777,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        5424,
-        -352
+        2944,
+        2464
       ],
-      "id": "c8ddbb9a-81c0-44f3-b168-c6921294b6d2",
+      "id": "a6e24d62-09e9-46a7-be57-5555639b2f2e",
       "name": "AI Agent9"
     },
     {
@@ -1877,11 +1792,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2272,
-        -2928
+        -208,
+        -112
       ],
       "typeVersion": 1,
-      "id": "748eeb8e-9bed-49a8-8136-d044653c08bb",
+      "id": "963b1c31-ca19-4196-8521-b33b8f2ddf7f",
       "name": "Sticky Note17"
     },
     {
@@ -1892,11 +1807,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        4528,
-        -496
+        2048,
+        2320
       ],
       "typeVersion": 1,
-      "id": "adf2c2c8-d554-4cbb-8627-06090f187854",
+      "id": "6f8017c2-5f29-45d5-bd5f-62c572834bdd",
       "name": "Sticky Note16"
     },
     {
@@ -1907,11 +1822,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        1552,
-        -368
+        -928,
+        2448
       ],
       "typeVersion": 1,
-      "id": "9a43805a-2bd0-43a2-9701-bdd7a5725a46",
+      "id": "37262a3b-3eba-451f-b8a8-df545364391b",
       "name": "Sticky Note15"
     },
     {
@@ -1926,10 +1841,10 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        4672,
-        -352
+        2192,
+        2464
       ],
-      "id": "2aaeda50-ced1-4bd8-9b82-8aa7a0266908",
+      "id": "38a860e2-3a2f-4db6-90db-b8dbf03e24ef",
       "name": "Aggregate"
     },
     {
@@ -1937,10 +1852,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        3328,
-        2432
+        848,
+        5248
       ],
-      "id": "fbf9de22-4378-44e4-83b0-4fab2f98384b",
+      "id": "27a66ff4-c1b5-4bd9-aabc-e0c070d7140b",
       "name": "get Template/Scalable7"
     },
     {
@@ -1948,10 +1863,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        3104,
-        2432
+        624,
+        5248
       ],
-      "id": "603841f1-495d-4726-8e14-484b5c2e12b9",
+      "id": "77dbf65d-84b1-46dc-96d5-34da73666e35",
       "name": "Create a row in Supabase7"
     },
     {
@@ -1961,10 +1876,10 @@
       "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
       "typeVersion": 1,
       "position": [
-        3216,
-        2432
+        736,
+        5248
       ],
-      "id": "3a86a7b4-7286-4ea1-80e7-883de328080b",
+      "id": "fd54921d-a77a-4db3-b473-d71d790c65f1",
       "name": "SerpAPI9"
     },
     {
@@ -1975,17 +1890,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        2960,
-        2400
+        480,
+        5216
       ],
-      "id": "f9abf778-d24b-4a0b-9da8-0de7f4f950d9",
-      "name": "Google Gemini Chat Model8",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "iHWIXFH5grh4MvYC",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "ed5f1bd0-e903-4c7a-b337-d215d9b29fd5",
+      "name": "Google Gemini Chat Model8"
     },
     {
       "parameters": {
@@ -1995,11 +1904,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2800,
-        2128
+        320,
+        4944
       ],
       "typeVersion": 1,
-      "id": "645df1e2-a3e6-4a56-bec3-fd747b9ad321",
+      "id": "06736ed5-c30f-4d0f-8511-1d275732e87b",
       "name": "Sticky Note14"
     },
     {
@@ -2009,10 +1918,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        2960,
-        2208
+        480,
+        5024
       ],
-      "id": "b6bd3343-a72e-42fe-a0a8-b8d29e1d25ca",
+      "id": "63581620-f902-4f3a-9d31-70c2844cb8e4",
       "name": "AI Agent8"
     },
     {
@@ -2020,10 +1929,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        3328,
-        1776
+        848,
+        4592
       ],
-      "id": "b63428df-bf7d-49a3-a171-24b55cd50eaa",
+      "id": "b1d61c9b-8c09-4615-ba50-ea49cbc37cf2",
       "name": "get Template/Scalable6"
     },
     {
@@ -2031,10 +1940,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        3104,
-        1776
+        624,
+        4592
       ],
-      "id": "6e3d1698-6651-4141-b661-5036c8e8cb46",
+      "id": "dab84e29-0093-4a37-b4a3-7f81956e27c2",
       "name": "Create a row in Supabase6"
     },
     {
@@ -2044,10 +1953,10 @@
       "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
       "typeVersion": 1,
       "position": [
-        3216,
-        1776
+        736,
+        4592
       ],
-      "id": "e0cdd92c-a594-4f28-9324-a91e80a4c335",
+      "id": "993965d9-683e-405e-a104-4eee94aead6b",
       "name": "SerpAPI8"
     },
     {
@@ -2058,17 +1967,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        2960,
-        1744
+        480,
+        4560
       ],
-      "id": "f44df296-a2b8-4e76-9214-a640b7f98458",
-      "name": "Google Gemini Chat Model7",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "iHWIXFH5grh4MvYC",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "9ccd9cd6-eb76-40b1-bf28-58775fbeec8b",
+      "name": "Google Gemini Chat Model7"
     },
     {
       "parameters": {
@@ -2078,11 +1981,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2800,
-        1472
+        320,
+        4288
       ],
       "typeVersion": 1,
-      "id": "75ae2d85-de8a-4b34-84a1-581207bea794",
+      "id": "307295ea-81d3-4875-bf48-68427a1762d2",
       "name": "Sticky Note13"
     },
     {
@@ -2092,10 +1995,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        2960,
-        1552
+        480,
+        4368
       ],
-      "id": "3eb875df-c5b8-4241-b3aa-7bc94e3ea0c0",
+      "id": "8c38a08f-b439-443c-8097-7dba6b24a7c9",
       "name": "AI Agent7"
     },
     {
@@ -2103,10 +2006,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        3328,
-        1072
+        848,
+        3888
       ],
-      "id": "c5e4e189-e17f-4d88-9d68-06964c1ffbed",
+      "id": "2f2fc702-e493-42dc-bee5-43a7fffddc99",
       "name": "get Template/Scalable5"
     },
     {
@@ -2114,10 +2017,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        3104,
-        1072
+        624,
+        3888
       ],
-      "id": "405b21d1-abac-4baa-b30d-e887d39827ce",
+      "id": "375ca962-4e07-4876-ac34-02551b8ed47c",
       "name": "Create a row in Supabase5"
     },
     {
@@ -2127,10 +2030,10 @@
       "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
       "typeVersion": 1,
       "position": [
-        3216,
-        1072
+        736,
+        3888
       ],
-      "id": "a91b4898-3b7a-4d52-83a3-c5eafecc5033",
+      "id": "305ccaaf-7c14-4e0f-a29b-39f920e0fc3f",
       "name": "SerpAPI7"
     },
     {
@@ -2141,17 +2044,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        2960,
-        1040
+        480,
+        3856
       ],
-      "id": "b439fbd0-196b-4664-997f-6eeb31c018ca",
-      "name": "Google Gemini Chat Model6",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "iHWIXFH5grh4MvYC",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "fcf8e881-0ca5-4858-8a15-b34bf573fd64",
+      "name": "Google Gemini Chat Model6"
     },
     {
       "parameters": {
@@ -2161,11 +2058,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2800,
-        768
+        320,
+        3584
       ],
       "typeVersion": 1,
-      "id": "d156721a-b91a-40cf-98a5-bae495de1304",
+      "id": "d84853ab-1ee7-491f-b628-7991b7dd93c9",
       "name": "Sticky Note12"
     },
     {
@@ -2175,10 +2072,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        2960,
-        848
+        480,
+        3664
       ],
-      "id": "3277bf89-b560-4ec2-a7ba-2130b6ba55d6",
+      "id": "8bd49d3f-2a74-49bc-9617-4df9d7294d6c",
       "name": "AI Agent6"
     },
     {
@@ -2186,10 +2083,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        3344,
-        416
+        864,
+        3232
       ],
-      "id": "72037a80-ee3d-4dad-a8d1-62a610709b28",
+      "id": "a62249e6-790b-4c32-83cf-471146f72eb8",
       "name": "get Template/Scalable4"
     },
     {
@@ -2197,10 +2094,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        3120,
-        416
+        640,
+        3232
       ],
-      "id": "eb13a305-3fe8-4112-b95e-8bb39f28fcb7",
+      "id": "9a0d0238-7f6d-4bee-8512-fe5fabcc7d33",
       "name": "Create a row in Supabase4"
     },
     {
@@ -2210,10 +2107,10 @@
       "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
       "typeVersion": 1,
       "position": [
-        3232,
-        416
+        752,
+        3232
       ],
-      "id": "e77a2f2c-2b2c-4ec4-b518-778349a08f14",
+      "id": "6ec5e612-f8ad-4d11-9342-b5cf7017315c",
       "name": "SerpAPI6"
     },
     {
@@ -2224,17 +2121,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        2976,
-        384
+        496,
+        3200
       ],
-      "id": "d0752f46-8f6a-4490-817c-78c1495ed873",
-      "name": "Google Gemini Chat Model5",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "iHWIXFH5grh4MvYC",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "be330fb1-35c2-48a7-9cbe-75fbd46bcfaa",
+      "name": "Google Gemini Chat Model5"
     },
     {
       "parameters": {
@@ -2244,11 +2135,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2816,
-        112
+        336,
+        2928
       ],
       "typeVersion": 1,
-      "id": "cc5da4c7-aac3-4020-9e52-262fcaae8780",
+      "id": "59a03fd8-f0d9-4228-aa39-dadb8e06b5e1",
       "name": "Sticky Note11"
     },
     {
@@ -2258,10 +2149,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        2976,
-        192
+        496,
+        3008
       ],
-      "id": "ac60f612-4435-423b-988f-6865db99a908",
+      "id": "b2b81169-bc25-40e3-8c01-3d72b3ce841d",
       "name": "AI Agent5"
     },
     {
@@ -2269,10 +2160,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        3328,
-        -208
+        848,
+        2608
       ],
-      "id": "9eae41c9-1e55-4a49-9e3c-18fd592060c5",
+      "id": "e2a177c1-9205-4655-8519-c04acfcdeae7",
       "name": "get Template/Scalable3"
     },
     {
@@ -2280,10 +2171,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        3104,
-        -208
+        624,
+        2608
       ],
-      "id": "23237022-d73c-41fd-a05b-09cc08481dae",
+      "id": "867e4be8-cd38-4a36-a8cc-b38f6daa40ce",
       "name": "Create a row in Supabase3"
     },
     {
@@ -2293,10 +2184,10 @@
       "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
       "typeVersion": 1,
       "position": [
-        3216,
-        -208
+        736,
+        2608
       ],
-      "id": "855c1c07-9c7b-40c1-ad34-59588e831b79",
+      "id": "0c809424-b260-4f1c-85f1-c31159dacb24",
       "name": "SerpAPI5"
     },
     {
@@ -2307,17 +2198,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        2960,
-        -240
+        480,
+        2576
       ],
-      "id": "b6f20978-9c20-44ee-bc38-a7e36772b126",
-      "name": "Google Gemini Chat Model4",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "iHWIXFH5grh4MvYC",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "3c4f5071-e11d-4d9e-b7c3-c290d24374ef",
+      "name": "Google Gemini Chat Model4"
     },
     {
       "parameters": {
@@ -2327,11 +2212,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2800,
-        -512
+        320,
+        2304
       ],
       "typeVersion": 1,
-      "id": "dc753fb2-cffc-447b-940c-4c2878f0628d",
+      "id": "91dbb909-e7f9-4e17-9d52-5d90a6367ea4",
       "name": "Sticky Note10"
     },
     {
@@ -2341,10 +2226,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        2960,
-        -432
+        480,
+        2384
       ],
-      "id": "4f5dcd37-77a4-4d5a-b380-a7afeb2d2d17",
+      "id": "902a1100-d43f-4247-a5a6-9465541534fb",
       "name": "AI Agent4"
     },
     {
@@ -2352,10 +2237,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        3312,
-        -912
+        832,
+        1904
       ],
-      "id": "44dce0b6-122f-4833-9767-f05c1085bebf",
+      "id": "e6c1b188-a310-4930-bbfa-53d044635c6e",
       "name": "get Template/Scalable2"
     },
     {
@@ -2363,10 +2248,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        3088,
-        -912
+        608,
+        1904
       ],
-      "id": "46d4aa98-3ed4-43bd-93c0-0b90d44b3801",
+      "id": "63c80cf8-46f1-493e-b18a-3754e5b745b9",
       "name": "Create a row in Supabase2"
     },
     {
@@ -2376,10 +2261,10 @@
       "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
       "typeVersion": 1,
       "position": [
-        3200,
-        -912
+        720,
+        1904
       ],
-      "id": "f36a9962-bc6d-48a2-9ef1-3b818ae946a3",
+      "id": "960963c7-1b26-4832-b171-68f252e89953",
       "name": "SerpAPI4"
     },
     {
@@ -2390,17 +2275,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        2944,
-        -944
+        464,
+        1872
       ],
-      "id": "b69087f1-0647-45b7-9ed2-8a2d7e931feb",
-      "name": "Google Gemini Chat Model3",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "iHWIXFH5grh4MvYC",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "bbc5c5df-7677-4965-af75-e08ca1662f84",
+      "name": "Google Gemini Chat Model3"
     },
     {
       "parameters": {
@@ -2410,11 +2289,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2784,
-        -1216
+        304,
+        1600
       ],
       "typeVersion": 1,
-      "id": "e3516c3b-4790-4233-8833-6aea7d1f8280",
+      "id": "c343c421-8fa7-4ef3-bc6c-cd633fdbefb6",
       "name": "Sticky Note9"
     },
     {
@@ -2424,10 +2303,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        2944,
-        -1136
+        464,
+        1680
       ],
-      "id": "3e143229-0966-49bb-b555-10f1be9f62da",
+      "id": "b1de8223-f231-453d-9878-5cbf50208129",
       "name": "AI Agent3"
     },
     {
@@ -2435,10 +2314,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        3296,
-        -1584
+        816,
+        1232
       ],
-      "id": "2305a006-7e8e-4ab8-91e7-3d340cf47713",
+      "id": "acf888a8-2fe5-4b6e-bcc0-9e40690166ac",
       "name": "get Template/Scalable1"
     },
     {
@@ -2446,10 +2325,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        3072,
-        -1584
+        592,
+        1232
       ],
-      "id": "4ca45ec1-c5ea-4ff7-9b5a-8e9c752fd041",
+      "id": "496ce071-705a-442f-af5a-7db9f4d9ad6f",
       "name": "Create a row in Supabase1"
     },
     {
@@ -2459,10 +2338,10 @@
       "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
       "typeVersion": 1,
       "position": [
-        3184,
-        -1584
+        704,
+        1232
       ],
-      "id": "20ccb783-8997-40bb-8f38-5e583e72a2e3",
+      "id": "22a71849-f870-4e20-af95-760637a65f8e",
       "name": "SerpAPI3"
     },
     {
@@ -2473,17 +2352,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        2928,
-        -1616
+        448,
+        1200
       ],
-      "id": "f9436148-b84a-4cdf-b497-40b70563e2a1",
-      "name": "Google Gemini Chat Model2",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "iHWIXFH5grh4MvYC",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "450244e5-b894-48bc-99e0-fc29ca1ea1a5",
+      "name": "Google Gemini Chat Model2"
     },
     {
       "parameters": {
@@ -2493,11 +2366,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2768,
-        -1888
+        288,
+        928
       ],
       "typeVersion": 1,
-      "id": "efbfa993-e9a4-4293-b1d2-49ed92a8bf24",
+      "id": "36c6e00e-1acd-47da-9d20-326429e32960",
       "name": "Sticky Note8"
     },
     {
@@ -2507,10 +2380,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        2928,
-        -1808
+        448,
+        1008
       ],
-      "id": "0171f4fb-c446-43ca-846f-99967dd3ceb2",
+      "id": "eb303117-693c-44e9-b7d8-54829f841255",
       "name": "AI Agent2"
     },
     {
@@ -2518,10 +2391,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        3280,
-        -2304
+        800,
+        512
       ],
-      "id": "33d10b1b-f7a9-491f-9ae2-0982c97e2fab",
+      "id": "faf820e1-6573-40ea-b718-51c1f83d0896",
       "name": "get Template/Scalable"
     },
     {
@@ -2531,10 +2404,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        1808,
-        -160
+        -672,
+        2656
       ],
-      "id": "1f1928a7-02e2-442a-9900-20d90e1ff872",
+      "id": "d1909436-f20f-4a6e-8f0c-8737be30d931",
       "name": "Split Out"
     },
     {
@@ -2542,10 +2415,10 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        -16,
-        -80
+        -2496,
+        2736
       ],
-      "id": "f6d52e6b-69e3-4d59-a265-3329a2e4dcd8",
+      "id": "5312cc6a-79cb-49f0-8d2f-206f7cd07005",
       "name": "Simple Memory"
     },
     {
@@ -2553,10 +2426,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        3056,
-        -2304
+        576,
+        512
       ],
-      "id": "aada6eb9-a05b-4fb0-ba80-5cbc7dfbebd5",
+      "id": "5737704f-94b1-4edd-971e-1f86487cfbb2",
       "name": "Create a row in Supabase"
     },
     {
@@ -2566,10 +2439,10 @@
       "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
       "typeVersion": 1,
       "position": [
-        3168,
-        -2304
+        688,
+        512
       ],
-      "id": "5e07dde5-d9dc-47d5-8bce-14cc1dab625b",
+      "id": "c44e8965-460b-4056-b3af-8e2375a93531",
       "name": "SerpAPI2"
     },
     {
@@ -2580,17 +2453,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        2912,
-        -2336
+        432,
+        480
       ],
-      "id": "df2cf277-372b-4135-8b3b-67f32622e50a",
-      "name": "Google Gemini Chat Model1",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "iHWIXFH5grh4MvYC",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "8f440dc6-d416-4ea6-88d4-554d3cbe92b3",
+      "name": "Google Gemini Chat Model1"
     },
     {
       "parameters": {
@@ -2600,11 +2467,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2752,
-        -2608
+        272,
+        208
       ],
       "typeVersion": 1,
-      "id": "d9212925-2f5f-4985-8370-ff1c27ef9040",
+      "id": "e42437b5-23d7-4e0c-9633-dbf91404c1f7",
       "name": "Sticky Note7"
     },
     {
@@ -2614,10 +2481,10 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        1616,
-        -160
+        -864,
+        2656
       ],
-      "id": "3187fe71-cb97-404c-9faa-3bcc1b0069cc",
+      "id": "5a5bdffb-d9b8-4589-8727-78fce9733324",
       "name": "Get many rows"
     },
     {
@@ -2630,18 +2497,12 @@
       "type": "n8n-nodes-base.telegramTrigger",
       "typeVersion": 1.2,
       "position": [
-        -496,
-        192
+        -2976,
+        3008
       ],
-      "id": "e38a82aa-aaaa-4d6d-9532-7305423ab2b2",
+      "id": "4d5a9821-0b88-4672-b4b9-1091f2ae5b74",
       "name": "Telegram Trigger",
-      "webhookId": "0190973b-94ec-4be7-a347-4423a2f5bc0e",
-      "credentials": {
-        "telegramApi": {
-          "id": "gAmvZ3GKDut3UH7T",
-          "name": "Telegram account"
-        }
-      }
+      "webhookId": "0190973b-94ec-4be7-a347-4423a2f5bc0e"
     },
     {
       "parameters": {
@@ -2650,10 +2511,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        2912,
-        -2528
+        432,
+        288
       ],
-      "id": "41568df3-89a8-4dfa-b4e1-baf7e8f051a4",
+      "id": "30cdba6f-64a1-42f0-9f44-f5257c0f5c07",
       "name": "AI Agent1"
     },
     {
@@ -2664,11 +2525,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -608,
-        448
+        -3088,
+        3264
       ],
       "typeVersion": 1,
-      "id": "d827d4e0-1389-4b74-8229-7326e822e9c0",
+      "id": "914f9ed0-a121-4c60-8a7e-10534a49a92e",
       "name": "Sticky Note6"
     },
     {
@@ -2680,11 +2541,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        0,
-        80
+        -2480,
+        2896
       ],
       "typeVersion": 1,
-      "id": "0463b60f-2090-4b4a-a6ca-0554f61e3d14",
+      "id": "a068a03f-bb3a-4df2-9ac4-c17efefcc7c0",
       "name": "Sticky Note5"
     },
     {
@@ -2695,17 +2556,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        -112,
-        272
+        -2592,
+        3088
       ],
-      "id": "8179b389-ea05-44c8-b13d-0d8f92ca0971",
-      "name": "Google Gemini Chat Model",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "iHWIXFH5grh4MvYC",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "8a72a3fd-553e-435a-83de-eed406b9789c",
+      "name": "Google Gemini Chat Model"
     },
     {
       "parameters": {
@@ -2714,10 +2569,10 @@
       "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
       "typeVersion": 1,
       "position": [
-        928,
-        192
+        -1552,
+        3008
       ],
-      "id": "5942cf1b-232f-483a-8f5d-e1f253e1b95e",
+      "id": "996b211b-d6a8-40b5-a24b-65413337b91e",
       "name": "SerpAPI1"
     },
     {
@@ -2729,11 +2584,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        848,
-        48
+        -1632,
+        2864
       ],
       "typeVersion": 1,
-      "id": "76e007c3-b754-4dd8-9b10-2102e8c1162a",
+      "id": "255b2ac0-85b5-4651-94e9-a4571088612d",
       "name": "Sticky Note4"
     },
     {
@@ -2745,11 +2600,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        544,
-        32
+        -1936,
+        2848
       ],
       "typeVersion": 1,
-      "id": "838fe1a6-1c5e-4c6c-a7fc-0daf5ee6cf6d",
+      "id": "1b088098-ad1a-4046-97df-a2114e348f26",
       "name": "Sticky Note3"
     },
     {
@@ -2787,10 +2642,10 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.3,
       "position": [
-        256,
-        224
+        -2224,
+        3040
       ],
-      "id": "240d9c38-a135-417e-a9d9-a449b792bccb",
+      "id": "e3c4c4d2-8ad8-42f9-97de-7e25f8fb1505",
       "name": "HTTP Request1"
     },
     {
@@ -2801,11 +2656,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -128,
-        -320
+        -2608,
+        2496
       ],
       "typeVersion": 1,
-      "id": "372e3cc7-9bb6-4717-8ae0-4005fa9b1a6e",
+      "id": "22016e4c-374b-4863-a1e4-abc35b85b72b",
       "name": "Sticky Note2"
     },
     {
@@ -2817,11 +2672,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        224,
-        32
+        -2256,
+        2848
       ],
       "typeVersion": 1,
-      "id": "16c80ca1-6a92-4e6c-944c-0e1f84d50d15",
+      "id": "1d7e4f78-dc18-4ea5-8ab5-991e25714780",
       "name": "Sticky Note1"
     },
     {
@@ -2831,10 +2686,10 @@
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.3,
       "position": [
-        384,
-        224
+        -2096,
+        3040
       ],
-      "id": "6bb34171-5ae5-4064-baef-8c489adaf9b2",
+      "id": "98bdcd00-f3f1-438a-9b41-104c4441dc81",
       "name": "HTTP Request"
     },
     {
@@ -2842,10 +2697,10 @@
       "type": "n8n-nodes-base.supabaseTool",
       "typeVersion": 1,
       "position": [
-        32,
-        128
+        -2448,
+        2944
       ],
-      "id": "79183b61-7d11-4754-9e36-f381fe4f1b09",
+      "id": "80a63959-a551-414e-aa14-23c36de7bd20",
       "name": "Supabase"
     },
     {
@@ -2856,11 +2711,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -544,
-        -592
+        -3024,
+        2224
       ],
       "typeVersion": 1,
-      "id": "36b4445d-3d75-44f4-8548-e2c20a136269",
+      "id": "76f70820-5922-4c13-8428-3438919bc1ab",
       "name": "Sticky Note"
     },
     {
@@ -2870,10 +2725,10 @@
       "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
       "typeVersion": 1,
       "position": [
-        640,
-        240
+        -1840,
+        3056
       ],
-      "id": "be2322c4-66ea-4257-8203-35e7b1a187ac",
+      "id": "f8e46065-5a32-4d5d-b8c0-a9513d8bda9d",
       "name": "SerpAPI"
     },
     {
@@ -2883,10 +2738,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        -112,
-        -176
+        -2592,
+        2640
       ],
-      "id": "f82d9729-81ac-467d-98fd-ae9177643794",
+      "id": "b96950f8-e6d7-477b-9c1c-3c2c5418fb18",
       "name": "AI Agent"
     },
     {
@@ -2897,10 +2752,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
       "position": [
-        -496,
-        -368
+        -2976,
+        2448
       ],
-      "id": "f50db2bc-5d55-4480-aa2d-a40dffe91a74",
+      "id": "ceed170c-6a3f-4b3e-8fb4-a33f3f000459",
       "name": "Webhook",
       "webhookId": "059bfea9-7c7d-45d4-a4d2-3112b07e8bd0"
     },
@@ -2911,10 +2766,10 @@
       "type": "n8n-nodes-base.formTrigger",
       "typeVersion": 2.3,
       "position": [
-        -496,
-        -176
+        -2976,
+        2640
       ],
-      "id": "c749b014-7907-4017-afb3-bd48c6d25c1f",
+      "id": "f9ec547c-5fda-43fe-be49-890525ed140b",
       "name": "On form submission",
       "webhookId": "a1167b24-1ccd-4807-9c28-45864775d3b7"
     },
@@ -2933,21 +2788,232 @@
       "type": "n8n-nodes-base.slackTrigger",
       "typeVersion": 1,
       "position": [
-        -496,
-        16
+        -2976,
+        2832
       ],
-      "id": "e91d59f5-9dd7-4f8e-a64c-087dafebfa2a",
+      "id": "ca4f79d2-4f67-46af-a5b7-9a0dfd6e90b0",
       "name": "Slack Trigger",
-      "webhookId": "90f33cdf-6329-4605-8dfa-e6cb335cf2ec",
-      "credentials": {
-        "slackApi": {
-          "id": "O4KosxBJHqLsHBA4",
-          "name": "Slack account"
-        }
-      }
+      "webhookId": "90f33cdf-6329-4605-8dfa-e6cb335cf2ec"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        -1184,
+        3008
+      ],
+      "id": "405f1d5f-fedc-468e-a9db-c684534a3dae",
+      "name": "Research Instructions"
+    },
+    {
+      "parameters": {
+        "content": "## Temporary Instructions \nThis is to tell Ai for the aspects to leave in research until deep search is called",
+        "height": 272,
+        "width": 352,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1296,
+        2896
+      ],
+      "typeVersion": 1,
+      "id": "7fb784ed-57ee-4e35-b0ae-a7b2c2f78960",
+      "name": "Sticky Note48"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        11600,
+        -272
+      ],
+      "id": "1b1a7403-ae1c-4999-b296-260f2951664d",
+      "name": "AI Agent29"
+    },
+    {
+      "parameters": {
+        "resource": "page",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.wordpressTool",
+      "typeVersion": 1,
+      "position": [
+        12096,
+        128
+      ],
+      "id": "923b95a0-0e2a-428c-ba66-73858d0c8754",
+      "name": "Create a page in Wordpress"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "updateFields": {}
+      },
+      "type": "n8n-nodes-base.wordpressTool",
+      "typeVersion": 1,
+      "position": [
+        12272,
+        128
+      ],
+      "id": "71ae3321-0a13-45e4-811d-54450c9bd8f7",
+      "name": "Update a post in Wordpress"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.wordpressTool",
+      "typeVersion": 1,
+      "position": [
+        12432,
+        128
+      ],
+      "id": "757fb9a4-4023-4b7a-b69c-215cb652b422",
+      "name": "Get a post in Wordpress"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "returnAll": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Return_All', ``, 'boolean') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.wordpressTool",
+      "typeVersion": 1,
+      "position": [
+        12592,
+        128
+      ],
+      "id": "c473269d-c111-4ee7-9fd6-f6281187c2b0",
+      "name": "Get many posts in Wordpress"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryMongoDbChat",
+      "typeVersion": 1,
+      "position": [
+        11696,
+        128
+      ],
+      "id": "807786bc-6177-4e08-8790-22af29750079",
+      "name": "MongoDB Chat Memory2"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-5-20250929",
+          "cachedResultName": "Claude Sonnet 4.5"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        11424,
+        128
+      ],
+      "id": "941cb449-3c5d-444f-9f5a-cf5bdafddd1a",
+      "name": "Anthropic Chat Model7"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        12768,
+        144
+      ],
+      "id": "e4d7fbbe-048a-4c36-8d76-e568d32703b4",
+      "name": "Templates1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        12928,
+        144
+      ],
+      "id": "c5e9ab4d-37c1-4c8b-9c6f-d0f501c46f07",
+      "name": "SerpAPI13"
+    },
+    {
+      "parameters": {
+        "operation": "getAll"
+      },
+      "type": "n8n-nodes-base.supabaseTool",
+      "typeVersion": 1,
+      "position": [
+        13088,
+        144
+      ],
+      "id": "6332cff6-df46-4d38-9e74-c2423275175d",
+      "name": "Get many rows in Supabase5"
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "user": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.slackTool",
+      "typeVersion": 2.4,
+      "position": [
+        13264,
+        144
+      ],
+      "id": "e983e622-84b3-4f8a-af11-1ed389f444d6",
+      "name": "Send message and wait for response in Slack1",
+      "webhookId": "526bb4b3-ed0a-40f8-b759-150d2b0bc7a5"
+    },
+    {
+      "parameters": {
+        "content": "# WordPress Agent",
+        "height": 704,
+        "width": 2704,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        11104,
+        -320
+      ],
+      "typeVersion": 1,
+      "id": "1781cded-0028-41c7-9d00-2d01b6befc51",
+      "name": "Sticky Note49"
+    },
+    {
+      "parameters": {
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        12560,
+        -272
+      ],
+      "id": "fda54247-d747-460d-9705-8ea47b9cbd0c",
+      "name": "Send a message5",
+      "webhookId": "6a1b8b5b-db45-4cbb-a083-fe9cedb87924"
     }
   ],
-  "pinData": {},
   "connections": {
     "Send message and wait for response in Slack": {
       "ai_tool": [
@@ -2966,17 +3032,6 @@
           {
             "node": "AI Agent28",
             "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "AI Agent28": {
-      "main": [
-        [
-          {
-            "node": "Send a message4",
-            "type": "main",
             "index": 0
           }
         ]
@@ -3048,6 +3103,28 @@
         ]
       ]
     },
+    "AI Agent28": {
+      "main": [
+        [
+          {
+            "node": "Send a message4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model5": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Text Classifier3",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "Text Classifier3": {
       "main": [
         [
@@ -3066,44 +3143,11 @@
         ]
       ]
     },
-    "Anthropic Chat Model5": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "Text Classifier3",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Send a message3": {
       "main": [
         [
           {
             "node": "Text Classifier3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Generate a video": {
-      "main": [
-        [
-          {
-            "node": "Send a message3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Split Out3": {
-      "main": [
-        [
-          {
-            "node": "AI Agent27",
             "type": "main",
             "index": 0
           }
@@ -3132,11 +3176,11 @@
         ]
       ]
     },
-    "AI Agent27": {
+    "Generate a video": {
       "main": [
         [
           {
-            "node": "Generate a video",
+            "node": "Send a message3",
             "type": "main",
             "index": 0
           }
@@ -3154,12 +3198,34 @@
         ]
       ]
     },
+    "Split Out3": {
+      "main": [
+        [
+          {
+            "node": "AI Agent27",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "Google Gemini Chat Model12": {
       "ai_languageModel": [
         [
           {
             "node": "AI Agent27",
             "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent27": {
+      "main": [
+        [
+          {
+            "node": "Generate a video",
+            "type": "main",
             "index": 0
           }
         ]
@@ -3186,6 +3252,17 @@
         ]
       ]
     },
+    "Anthropic Chat Model4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Text Classifier2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "Text Classifier2": {
       "main": [
         [
@@ -3199,17 +3276,6 @@
           {
             "node": "Split Out2",
             "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Anthropic Chat Model4": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "Text Classifier2",
-            "type": "ai_languageModel",
             "index": 0
           }
         ]
@@ -3402,11 +3468,27 @@
         ]
       ]
     },
+    "Anthropic Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Text Classifier1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "Text Classifier1": {
       "main": [
         [
           {
             "node": "Split Out2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent29",
             "type": "main",
             "index": 0
           }
@@ -3415,17 +3497,6 @@
           {
             "node": "Split Out1",
             "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Anthropic Chat Model3": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "Text Classifier1",
-            "type": "ai_languageModel",
             "index": 0
           }
         ]
@@ -3447,17 +3518,6 @@
         [
           {
             "node": "Send a message1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "AI Agent23": {
-      "main": [
-        [
-          {
-            "node": "Aggregate2",
             "type": "main",
             "index": 0
           }
@@ -3505,6 +3565,17 @@
           {
             "node": "AI Agent16",
             "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent23": {
+      "main": [
+        [
+          {
+            "node": "Aggregate2",
+            "type": "main",
             "index": 0
           }
         ]
@@ -3785,17 +3856,6 @@
         ]
       ]
     },
-    "AI Agent15": {
-      "main": [
-        [
-          {
-            "node": "If",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "MongoDB Chat Memory": {
       "ai_memory": [
         [
@@ -3851,28 +3911,6 @@
         ]
       ]
     },
-    "SerpAPI11": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent15",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "SerpAPI10": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent15",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "HTTP": {
       "ai_tool": [
         [
@@ -3895,12 +3933,45 @@
         ]
       ]
     },
+    "SerpAPI11": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent15",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SerpAPI10": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent15",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "Anthropic Chat Model": {
       "ai_languageModel": [
         [
           {
             "node": "AI Agent15",
             "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent15": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
             "index": 0
           }
         ]
@@ -4063,17 +4134,6 @@
         ]
       ]
     },
-    "AI Agent8": {
-      "main": [
-        [
-          {
-            "node": "Aggregate",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "get Template/Scalable7": {
       "ai_tool": [
         [
@@ -4118,7 +4178,7 @@
         ]
       ]
     },
-    "AI Agent7": {
+    "AI Agent8": {
       "main": [
         [
           {
@@ -4173,7 +4233,7 @@
         ]
       ]
     },
-    "AI Agent6": {
+    "AI Agent7": {
       "main": [
         [
           {
@@ -4228,7 +4288,7 @@
         ]
       ]
     },
-    "AI Agent5": {
+    "AI Agent6": {
       "main": [
         [
           {
@@ -4283,7 +4343,7 @@
         ]
       ]
     },
-    "AI Agent4": {
+    "AI Agent5": {
       "main": [
         [
           {
@@ -4338,7 +4398,7 @@
         ]
       ]
     },
-    "AI Agent3": {
+    "AI Agent4": {
       "main": [
         [
           {
@@ -4393,7 +4453,7 @@
         ]
       ]
     },
-    "AI Agent2": {
+    "AI Agent3": {
       "main": [
         [
           {
@@ -4448,6 +4508,28 @@
         ]
       ]
     },
+    "AI Agent2": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get Template/Scalable": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "Split Out": {
       "main": [
         [
@@ -4494,45 +4576,12 @@
         ]
       ]
     },
-    "Get many rows": {
-      "main": [
-        [
-          {
-            "node": "Split Out",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Telegram Trigger": {
-      "main": [
+    "Simple Memory": {
+      "ai_memory": [
         [
           {
             "node": "AI Agent",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "AI Agent1": {
-      "main": [
-        [
-          {
-            "node": "Aggregate",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "get Template/Scalable": {
-      "ai_tool": [
-        [
-          {
-            "node": "AI Agent1",
-            "type": "ai_tool",
+            "type": "ai_memory",
             "index": 0
           }
         ]
@@ -4571,12 +4620,34 @@
         ]
       ]
     },
-    "Simple Memory": {
-      "ai_memory": [
+    "Get many rows": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
         [
           {
             "node": "AI Agent",
-            "type": "ai_memory",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
             "index": 0
           }
         ]
@@ -4615,17 +4686,6 @@
         ]
       ]
     },
-    "AI Agent": {
-      "main": [
-        [
-          {
-            "node": "Get many rows",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "HTTP Request": {
       "ai_tool": [
         [
@@ -4654,6 +4714,17 @@
           {
             "node": "AI Agent",
             "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Get many rows",
+            "type": "main",
             "index": 0
           }
         ]
@@ -4691,17 +4762,142 @@
           }
         ]
       ]
+    },
+    "Research Instructions": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent29": {
+      "main": [
+        [
+          {
+            "node": "Send a message5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a page in Wordpress": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent29",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update a post in Wordpress": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent29",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a post in Wordpress": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent29",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many posts in Wordpress": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent29",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MongoDB Chat Memory2": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent29",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model7": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent29",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Templates1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent29",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SerpAPI13": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent29",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many rows in Supabase5": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent29",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send message and wait for response in Slack1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent29",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
-  "active": false,
-  "settings": {
-    "executionOrder": "v1"
-  },
-  "versionId": "913951c0-3039-43c3-a9ec-595a87e2488b",
+  "pinData": {},
   "meta": {
-    "templateCredsSetupCompleted": true,
-    "instanceId": "c42235f7d1e0add0aff8be7a9209be7ad4d961313f2904e43cc17b4e5151b26d"
-  },
-  "id": "fnCWxgWKzcKcMNfR",
-  "tags": []
+    "instanceId": "e62af5bbdca4ae9172fb369e6b7498855e94633b763da1b834db504b2b760529"
+  }
 }
