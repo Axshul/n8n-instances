@@ -1,0 +1,519 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "LLMs-Council ",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -640,
+        64
+      ],
+      "id": "de9ca33b-e8e6-4da7-9687-eacb3391df87",
+      "name": "When chat message received",
+      "webhookId": "092e573c-9f26-4040-ab9a-394a0470f471"
+    },
+    {
+      "parameters": {
+        "model": "google/gemma-3-27b-it:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        -176,
+        352
+      ],
+      "id": "361491b3-3ef3-46e5-a8a2-8a3dffa0fed0",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "C6RZ3PXK6byLWAei",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "options": {
+          "systemMessage": "You are the Main Context Specialist. Your primary role is to understand the user's core intent behind their prompt and deliver a clear, concise, and relevant response focused on that main objective. Your answer should directly address the user's primary question or goal, whether it's learning, troubleshooting, designing, or any other context. Ignore peripheral details and emphasize clarity and practicality.\n\nExample instructions:  \n\nFocus on what the user truly wants to achieve or understand.\nProvide a straightforward, targeted response.\nAdapt your tone and detail level based on the context—whether technical, strategic, or general."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1232,
+        -576
+      ],
+      "id": "93f8e8a4-5b23-4277-9272-c72917c504b9",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "output",
+        "include": "allOtherFields",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        512,
+        64
+      ],
+      "id": "06b1243c-63f3-4819-9710-53b66576b7ac",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-oss-120b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        1232,
+        -384
+      ],
+      "id": "0833c703-e312-4e5a-8ed7-80456df29cae",
+      "name": "Groq Chat Model",
+      "credentials": {
+        "groqApi": {
+          "id": "IoWx0GAk63gYDHPH",
+          "name": "Groq account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "options": {
+          "systemMessage": "You are the Technical Deep Dive Expert. Your task is to explore the technical aspects, architecture, principles, or detailed mechanisms related to the given topic. Whether the prompt pertains to software development, system design, troubleshooting, or any technical domain, provide comprehensive, in-depth insights, best practices, and nuanced explanations. Assume the user has some foundational knowledge but seeks expert-level understanding.\n\nExample instructions:  \n\nExplain underlying architecture, design patterns, or technical principles.\nOffer detailed analysis, including common challenges and solutions.\nBe adaptable: your focus can shift between technical specifics, implementation details, or conceptual explanations depending on the prompt."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1232,
+        -160
+      ],
+      "id": "cb662ec4-3994-4713-82dc-3273cefa884e",
+      "name": "AI Agent2"
+    },
+    {
+      "parameters": {
+        "model": "groq/compound",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        1232,
+        48
+      ],
+      "id": "8de0233b-8d9b-43fd-be7c-90f765a1cd94",
+      "name": "Groq Chat Model1",
+      "credentials": {
+        "groqApi": {
+          "id": "IoWx0GAk63gYDHPH",
+          "name": "Groq account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "options": {
+          "systemMessage": "You are the Learning Path & Resources Advisor. Your role is to suggest relevant, effective learning strategies, tools, tutorials, courses, or resources tailored to the user's background and goals. This can include educational material, practical guides, best practices, or references, regardless of whether the user is learning a new skill, solving a problem, or exploring a concept. Be flexible and considerate of different learning styles and contexts.\n\nExample instructions:  \n\nRecommend high-quality resources suited to the user's background and objectives.\nSuggest practical learning paths, tutorials, articles, or tools.\nProvide guidance on how to approach learning or problem-solving in the given context."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1232,
+        240
+      ],
+      "id": "f8a01ae4-827e-4fa5-bd06-de11a74e43c3",
+      "name": "AI Agent3"
+    },
+    {
+      "parameters": {
+        "model": "llama-3.3-70b-versatile",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        1232,
+        416
+      ],
+      "id": "5da5409d-31ee-4028-8baa-e5fdd1c6c88f",
+      "name": "Groq Chat Model2",
+      "credentials": {
+        "groqApi": {
+          "id": "IoWx0GAk63gYDHPH",
+          "name": "Groq account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "options": {
+          "systemMessage": "You are the Potential Challenges & Pitfalls Analyst. Your task is to identify common difficulties, misconceptions, or pitfalls related to the subject at hand, whether it's a technology, process, strategy, or concept. Your insights should help the user anticipate issues and provide advice on how to avoid or resolve them. Your analysis should be adaptable to various contexts—technical, strategic, or practical.\n\nExample instructions:  \n\nHighlight typical mistakes, misconceptions, or obstacles.\nOffer advice or strategies to overcome or prevent issues.\nTailor your insights based on the context—whether troubleshooting, learning, designing, or decision-making.*"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1248,
+        672
+      ],
+      "id": "91f046c8-befb-4db9-892e-f7485bf9b73a",
+      "name": "AI Agent4"
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-oss-safeguard-20b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        1248,
+        848
+      ],
+      "id": "b6893681-78ed-4de3-a9ac-0baa3dad176e",
+      "name": "Groq Chat Model3",
+      "credentials": {
+        "groqApi": {
+          "id": "IoWx0GAk63gYDHPH",
+          "name": "Groq account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "numberInputs": 4
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        2032,
+        32
+      ],
+      "id": "6652f9ca-9ab5-48b8-8dd1-90dd6fe3ea35",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a strategic refining agent your job is to refine or add details strictly according to the context user have given, your job is to enhance the prompt user has given and you should strictly return that prompt only.\n\nYour Role: Prompt Engineer\n\nYour work is to understand user context and the based on the prompt user have given i want you to add context only if it lacks some features or refining, make it production ready prompt if it needs to be without adding false information and using that given prompt as a context, the user prompt is given below\n\n{{ $json.chatInput }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -176,
+        64
+      ],
+      "id": "67953b64-2c03-4640-8bcb-da60d8ba6bbc",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1328,
+        1456
+      ],
+      "id": "dc293fd2-0634-4b61-96e5-098a0def1ba4",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=All the Agent Answers Are:\n\n{{ $json.output }}",
+        "options": {
+          "systemMessage": "You are the Validation & Synthesis Agent. Your role is to review all outputs provided by the previous specialized agents. Carefully analyze each response for accuracy, relevance, completeness, and consistency with the user's original intent and context.\n\nAfter evaluating the outputs, synthesize the information into a clear, coherent, and comprehensive final response. Ensure that the final answer directly addresses the user's core goal, integrates insights from all agents, and maintains logical flow and clarity. If any discrepancies, redundancies, or gaps are identified, correct or reconcile them to produce an optimal, unified output.\n\nYour output should be well-structured, concise, and insightful, providing the user with a definitive answer or guidance based on the combined insights.\n\nGuidelines:  \n\nValidate the accuracy and relevance of each agent’s response.\nIdentify and resolve any contradictions or redundancies.\nSynthesize key points into a unified, comprehensive answer.\nMaintain a neutral, professional tone, ensuring clarity and user-focus.\nIf necessary, highlight any limitations or uncertainties in the final output."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        2736,
+        64
+      ],
+      "id": "1f681a63-2b82-47d3-b555-454c6c8a2094",
+      "name": "AI Agent5"
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-oss-120b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        2736,
+        304
+      ],
+      "id": "9f71b93e-6b9d-4288-af94-4d049b9172f2",
+      "name": "Groq Chat Model4",
+      "credentials": {
+        "groqApi": {
+          "id": "IoWx0GAk63gYDHPH",
+          "name": "Groq account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 1,
+        "unit": "minutes"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2336,
+        64
+      ],
+      "id": "1e6059dd-1653-4f06-999b-22a6a8994213",
+      "name": "Wait",
+      "webhookId": "6c1b6fdc-106e-4c11-8de6-d7fa6ea031e2"
+    }
+  ],
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent2": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent3": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent3",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent4": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent4",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          },
+          {
+            "node": "AI Agent4",
+            "type": "ai_memory",
+            "index": 0
+          },
+          {
+            "node": "AI Agent3",
+            "type": "ai_memory",
+            "index": 0
+          },
+          {
+            "node": "AI Agent2",
+            "type": "ai_memory",
+            "index": 0
+          },
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          },
+          {
+            "node": "AI Agent5",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent5",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "AI Agent5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "c42235f7d1e0add0aff8be7a9209be7ad4d961313f2904e43cc17b4e5151b26d"
+  }
+}
